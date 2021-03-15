@@ -196,6 +196,18 @@ h6 {
   color: rgba(225, 225, 225, 0.7);
 }
 
+.container .grid #card1 .header {
+  z-index: 2;
+}
+
+.container .grid #card1 h5 {
+  z-index: 2;
+}
+
+.container .grid #card1 p {
+  z-index: 2;
+}
+
 .container .grid #card2 {
   background-color: #515864;
 }
@@ -424,5 +436,11 @@ h6 {
     -ms-grid-column-span: 3;
     grid-area: 5 / 1 / span 2 / span 3;
   }
+}
+
+.comillas {
+  position: absolute;
+  left: 60%;
+  z-index: 1;
 }
 /*# sourceMappingURL=TestimonialStyle2.css.map */
