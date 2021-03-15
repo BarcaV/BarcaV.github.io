@@ -439,6 +439,9 @@ h6 {
 }
 
 @media (max-width: 767px) {
+  .photo {
+    height: 50%;
+  }
   .card h5 {
     padding-top: 1.5rem;
   }
@@ -446,7 +449,7 @@ h6 {
 
 .comillas {
   position: absolute;
-  left: 60%;
+  left: 35%;
   z-index: 1;
 }
 /*# sourceMappingURL=TestimonialStyle2.css.map */
