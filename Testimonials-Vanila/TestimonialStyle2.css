@@ -438,6 +438,12 @@ h6 {
   }
 }
 
+@media (max-width: 767px) {
+  .card h5 {
+    padding-top: 1.5rem;
+  }
+}
+
 .comillas {
   position: absolute;
   left: 60%;
