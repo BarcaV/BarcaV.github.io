@@ -302,6 +302,12 @@ p {
   color: rgba(25, 25, 25, 0.7);
 }
 
+.comillas {
+  position: absolute;
+  left: 60%;
+  z-index: 1;
+}
+
 @media (min-width: 1200px) {
   .container {
     height: 100vh;
@@ -456,14 +462,11 @@ p {
   .photo {
     height: 50%;
   }
-  .card h5 {
+  .container {
+    width: 80%;
+  }
+  .container .card h5 {
     padding-top: 1rem;
   }
-}
-
-.comillas {
-  position: absolute;
-  left: 60%;
-  z-index: 1;
 }
 /*# sourceMappingURL=TestimonialStyle2.css.map */
