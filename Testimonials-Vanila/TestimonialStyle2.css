@@ -178,7 +178,7 @@ p {
 }
 
 .container .grid {
-  padding: 1.5rem 0;
+  padding: 1.5rem;
   width: 80%;
   display: -ms-grid;
   display: grid;
@@ -463,7 +463,7 @@ p {
     height: 50%;
   }
   .grid {
-    width: 95%;
+    width: 100%;
   }
   .grid .card h5 {
     padding-top: 1rem;
