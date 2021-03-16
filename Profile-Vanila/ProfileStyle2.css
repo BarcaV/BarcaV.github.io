@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/*Fuentes*/
 /*Fuente*/
 @font-face {
   font-family: 'Kumbh Sans';
@@ -42,6 +36,11 @@
 }
 
 /*Generales*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Kumbh Sans';
   font-size: 18px;
@@ -242,4 +241,4 @@ h6 {
   left: 50%;
   z-index: 1;
 }
-/*# sourceMappingURL=ProfileStyle2.1.css.map */
+/*# sourceMappingURL=ProfileStyle2.css.map */
