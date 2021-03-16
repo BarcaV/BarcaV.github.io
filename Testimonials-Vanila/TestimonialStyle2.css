@@ -133,6 +133,7 @@ body {
 }
 
 .card .header {
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,7 +180,6 @@ p {
 
 .container .grid {
   padding: 1.5rem;
-  width: 80%;
   display: -ms-grid;
   display: grid;
   grid-gap: 1.5rem;
@@ -208,10 +208,6 @@ p {
 
 .container .grid #card1 p {
   color: rgba(225, 225, 225, 0.7);
-}
-
-.container .grid #card1 .header {
-  z-index: 2;
 }
 
 .container .grid #card1 h5 {
@@ -459,14 +455,8 @@ p {
 }
 
 @media (max-width: 767px) {
-  .photo {
-    height: 50%;
-  }
   .grid {
     width: 100%;
-  }
-  .grid .card h5 {
-    padding-top: 1rem;
   }
 }
 /*# sourceMappingURL=TestimonialStyle2.css.map */
