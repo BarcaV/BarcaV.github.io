@@ -462,10 +462,10 @@ p {
   .photo {
     height: 50%;
   }
-  .container {
+  .grid {
     width: 80%;
   }
-  .container .card h5 {
+  .grid .card h5 {
     padding-top: 1rem;
   }
 }
