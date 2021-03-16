@@ -133,10 +133,10 @@ body {
 }
 
 .card .header {
-  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 2;
 }
 
 .card .header div {
