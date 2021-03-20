@@ -600,10 +600,12 @@ h5 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 2rem !important;
   }
   .main-text h1 {
     width: 80%;
+  }
+  .main-text p {
+    padding-top: 2rem !important;
   }
   .reviews {
     padding: 1rem 0;
