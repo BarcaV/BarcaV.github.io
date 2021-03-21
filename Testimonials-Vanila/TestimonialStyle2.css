@@ -114,6 +114,7 @@
 }
 
 body {
+  background-color: #ECF2F8;
   font-family: 'Barlow Semi Condensed';
   font-size: 13px;
   line-height: 1.5;
@@ -164,7 +165,6 @@ p {
 }
 
 .container {
-  background-color: #ECF2F8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
