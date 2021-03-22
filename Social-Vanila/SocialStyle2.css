@@ -238,8 +238,8 @@ h5 {
     height: 100vh;
   }
   .container .grid {
-    max-width: 1156px;
     width: 80vw;
+    max-width: 1156px;
     height: 80vw / 2;
     max-height: 563.9px;
     -ms-grid-rows: 1fr 1fr;
