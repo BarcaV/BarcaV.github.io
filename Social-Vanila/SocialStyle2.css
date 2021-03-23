@@ -62,6 +62,15 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: 'Spartan';
+  font-size: 15px;
+}
+
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,11 +85,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-body {
-  font-family: 'Spartan';
-  font-size: 15px;
 }
 
 h5 {
@@ -114,6 +118,7 @@ h5 {
 .main-text h1 {
   color: #501F50;
   font-size: 3rem;
+  font-weight: 700;
   line-height: 1;
   z-index: 2;
 }
@@ -141,7 +146,7 @@ h5 {
 }
 
 .reviews .valoracion h5 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -240,7 +245,7 @@ h5 {
   .container .grid {
     width: 80vw;
     max-width: 1156px;
-    height: 80vw / 2;
+    height: 40vw;
     max-height: 563.9px;
     -ms-grid-rows: 1fr 1fr;
     -ms-grid-columns: 1fr 0.9fr;
@@ -331,7 +336,7 @@ h5 {
   }
   .container .grid {
     width: 85vw;
-    height: 85vw / 2;
+    height: 42.5vw;
     -ms-grid-rows: 1fr 1fr;
     -ms-grid-columns: 1fr 1fr;
         grid-template: 1fr 1fr / 1fr 1fr;
