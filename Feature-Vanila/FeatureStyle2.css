@@ -176,7 +176,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins';
+  font-family: 'Poppins', 'San-serif';
   font-size: 15px;
   background-color: #F9F9F9;
 }
@@ -218,8 +218,8 @@ body {
           align-items: center;
 }
 
-.header h3 {
-  font-size: 1.75rem;
+.header h2 {
+  font-size: calc(1.325rem + 0.9vw);
   font-weight: 200;
 }
 
@@ -259,7 +259,7 @@ body {
   width: 92.5%;
   height: 47%;
   background-color: #FFF;
-  border-radius: 5px;
+  border-radius: 0.33rem;
   -webkit-box-shadow: 0rem 0.2rem 0.7rem 0.1rem #D9E1F1, 0rem 0.33rem 1rem 0.5rem #F1F1F1;
           box-shadow: 0rem 0.2rem 0.7rem 0.1rem #D9E1F1, 0rem 0.33rem 1rem 0.5rem #F1F1F1;
 }
@@ -305,15 +305,14 @@ body {
 }
 
 /* Media Query */
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .container {
     height: 100vh;
   }
   .container .grid {
-    width: 72.5vw;
-    max-width: 1090px;
-    height: 43.93939vw;
-    max-height: 680px;
+    width: 75vw;
+    height: 50vw;
+    max-height: 97vh;
     -ms-grid-rows: 0.8fr (1.2fr)[2];
     -ms-grid-columns: (1fr)[3];
         grid-template: 0.8fr repeat(2, 1.2fr)/repeat(3, 1fr);
@@ -349,19 +348,20 @@ body {
   .header p {
     padding: 1rem 0;
     width: 45%;
-    font-size: 0.9rem;
+    font-size: 2rem;
     line-height: 1.8;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .container {
     height: 100vh;
   }
   .container .grid {
-    width: 75vw;
-    height: 50vw;
-    max-height: 97vh;
+    width: 72.5vw;
+    max-width: 1090px;
+    height: 43.93939vw;
+    max-height: 680px;
     -ms-grid-rows: 0.8fr (1.2fr)[2];
     -ms-grid-columns: (1fr)[3];
         grid-template: 0.8fr repeat(2, 1.2fr)/repeat(3, 1fr);
@@ -456,7 +456,7 @@ body {
 
 @media (min-width: 768px) and (max-width: 991px) {
   .grid {
-    margin: 4rem 2rem 2rem 2rem;
+    margin: 6rem 2rem 2rem 2rem;
     -ms-grid-rows: 1fr (2fr)[2];
     -ms-grid-columns: (1fr)[2];
         grid-template: 1fr repeat(2, 2fr)/repeat(2, 1fr);
@@ -530,17 +530,23 @@ body {
     margin: 0 1rem;
     width: 35% !important;
     height: 80% !important;
-  }
-  main .center .card .card-body .card-header p {
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
+    /* .card-body {
+
+                    .card-header {
+
+                        p {
+                            font-size: 0.8rem !important;
+                            line-height: 1.5 !important;
+                        }
+                    }
+                } */
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
   .grid {
-    margin: 4rem 2rem 2rem 2rem;
-    row-gap: 1rem;
+    margin: 6rem 2rem 2rem 2rem;
+    row-gap: 1.5rem;
   }
   .header {
     -webkit-box-pack: center !important;
@@ -548,18 +554,12 @@ body {
             justify-content: center !important;
   }
   .header p {
-    padding: 0.5rem 0 !important;
+    padding: 1.5rem 0 2.5rem 0 !important;
     width: 90% !important;
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
   }
   aside .card {
     width: 50% !important;
     height: 100% !important;
-  }
-  aside .card .card-body .card-header p {
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
   }
   main .center {
     -webkit-box-pack: justify;
@@ -569,10 +569,6 @@ body {
   main .center .card {
     width: 50% !important;
     height: 90% !important;
-  }
-  main .center .card .card-body .card-header p {
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
   }
   #karma {
     margin-top: 1rem;
@@ -584,8 +580,8 @@ body {
 
 @media (max-width: 575px) {
   .grid {
-    margin: 4rem 2rem 2rem 2rem;
-    row-gap: 1rem;
+    margin: 6rem 2rem 2rem 2rem;
+    row-gap: 1.5rem;
   }
   .header {
     -webkit-box-pack: center !important;
@@ -593,18 +589,12 @@ body {
             justify-content: center !important;
   }
   .header p {
-    padding: 0.5rem 0 !important;
+    padding: 1.5rem 0 2.5rem 0 !important;
     width: 100% !important;
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
   }
   aside .card {
-    max-width: 300px;
+    max-width: 325px;
     height: 100% !important;
-  }
-  aside .card .card-body .card-header p {
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
   }
   main .center {
     -webkit-box-pack: justify;
@@ -612,15 +602,11 @@ body {
             justify-content: space-between;
   }
   main .center .card {
-    max-width: 300px;
+    max-width: 325px;
     height: 100% !important;
   }
-  main .center .card .card-body .card-header p {
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
-  }
   #karma {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   .svg {
     margin-top: 1rem;
