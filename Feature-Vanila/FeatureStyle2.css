@@ -205,14 +205,19 @@ body {
 }
 
 .container .grid {
+  margin: 6rem 2rem 2rem 2rem;
   display: -ms-grid;
   display: grid;
+  row-gap: 1.5rem;
 }
 
 /* Header */
 .header {
   height: 100%;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -228,6 +233,8 @@ body {
 }
 
 .header p {
+  padding: 1.5rem 0 2.5rem 0;
+  width: 100%;
   font-size: 0.9rem;
   font-weight: 200;
   line-height: 1.7;
@@ -244,14 +251,25 @@ body {
           align-items: center;
 }
 
+.side .card {
+  max-width: 325px;
+  height: 100%;
+}
+
 /* Centro */
 .center {
   height: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.center .card {
+  max-width: 325px;
+  height: 100%;
 }
 
 /* Cards */
@@ -298,6 +316,7 @@ body {
 }
 
 #karma {
+  margin-top: 1.5rem;
   border-top: 0.33rem solid #FCAF4A;
 }
 
@@ -305,7 +324,48 @@ body {
   border-top: 0.33rem solid #549DF2;
 }
 
+.svg {
+  margin-top: 1rem;
+}
+
 /* Media Query */
+@media (min-width: 576px) and (max-width: 767px) {
+  .grid {
+    margin: 6rem 2rem 2rem 2rem;
+    row-gap: 1.5rem;
+  }
+  .header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header p {
+    padding: 1.5rem 0 2.5rem 0;
+    width: 80%;
+  }
+  .side .card {
+    width: 55%;
+    max-width: 345px;
+    height: 100%;
+  }
+  main .center {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .center .card {
+    width: 55%;
+    max-width: 345px;
+    height: 90%;
+  }
+  #karma {
+    margin-top: 1rem;
+  }
+  .svg {
+    margin-top: 2rem;
+  }
+}
+
 @media (min-width: 768px) {
   .grid {
     margin: 6rem 2rem 2rem 2rem;
@@ -350,9 +410,7 @@ body {
   }
   .header p {
     padding: 0.5rem 0;
-    width: 50%;
-    font-size: 0.8rem;
-    line-height: 1.5;
+    width: 57.5%;
   }
   aside .side {
     -webkit-box-align: end;
@@ -362,7 +420,7 @@ body {
   aside .side .card {
     width: 80%;
     max-width: 340px;
-    height: 80%;
+    height: 75%;
   }
   #left .side {
     -webkit-box-pack: end;
@@ -396,7 +454,7 @@ body {
     margin: 0 2rem;
     width: 40%;
     max-width: 340px;
-    height: 80%;
+    height: 75%;
   }
 }
 
@@ -407,11 +465,12 @@ body {
   .container .grid {
     margin: 0;
     width: 90vw;
-    height: 56.25vw;
+    height: 57.8125vw;
     max-height: 97vh;
     -ms-grid-rows: 0.8fr (1.2fr)[2];
     -ms-grid-columns: (1fr)[3];
         grid-template: 0.8fr repeat(2, 1.2fr)/repeat(3, 1fr);
+    row-gap: 1rem;
   }
   .container .grid #top {
     -ms-grid-row: 1;
@@ -442,10 +501,8 @@ body {
     grid-area: 2 / 3 / span 2 / span 1;
   }
   .header p {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0 0;
     width: 50%;
-    font-size: 0.8rem;
-    line-height: 1.5;
   }
   aside .side {
     -webkit-box-align: center;
@@ -454,7 +511,8 @@ body {
   }
   aside .side .card {
     width: 92.5%;
-    height: 47%;
+    max-width: none;
+    height: 47.5%;
   }
   #left .side {
     -webkit-box-pack: center;
@@ -486,7 +544,11 @@ body {
   main .center .card {
     margin: 0;
     width: 92.5%;
-    height: 47%;
+    max-width: none;
+    height: 47.5%;
+  }
+  .svg {
+    margin-top: 0.5rem;
   }
 }
 
@@ -495,8 +557,8 @@ body {
     height: 100vh;
   }
   .container .grid {
-    width: 80vw;
-    height: 48.48485vw;
+    width: 85vw;
+    height: 51.51515vw;
     max-height: 97vh;
     -ms-grid-rows: 0.8fr (1.2fr)[2];
     -ms-grid-columns: (1fr)[3];
@@ -543,9 +605,9 @@ body {
     height: 100vh;
   }
   .container .grid {
-    width: 72.5vw;
-    max-width: 1090px;
-    height: 43.93939vw;
+    width: 80vw;
+    max-width: 1100px;
+    height: 48.48485vw;
     max-height: 97vh;
     -ms-grid-rows: 0.8fr (1.2fr)[2];
     -ms-grid-columns: (1fr)[3];
@@ -584,78 +646,6 @@ body {
     width: 45%;
     font-size: 0.9rem;
     line-height: 1.8;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-  .grid {
-    margin: 6rem 2rem 2rem 2rem;
-    row-gap: 1.5rem;
-  }
-  .header {
-    -webkit-box-pack: center !important;
-        -ms-flex-pack: center !important;
-            justify-content: center !important;
-  }
-  .header p {
-    padding: 1.5rem 0 2.5rem 0 !important;
-    width: 80% !important;
-  }
-  aside .card {
-    width: 55% !important;
-    max-width: 345px;
-    height: 100% !important;
-  }
-  main .center {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  main .center .card {
-    width: 55% !important;
-    max-width: 345px;
-    height: 90% !important;
-  }
-  #karma {
-    margin-top: 1rem;
-  }
-  .svg {
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 575px) {
-  .grid {
-    margin: 6rem 2rem 2rem 2rem;
-    row-gap: 1.5rem;
-  }
-  .header {
-    -webkit-box-pack: center !important;
-        -ms-flex-pack: center !important;
-            justify-content: center !important;
-  }
-  .header p {
-    padding: 1.5rem 0 2.5rem 0 !important;
-    width: 100% !important;
-  }
-  aside .card {
-    max-width: 325px;
-    height: 100% !important;
-  }
-  main .center {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  main .center .card {
-    max-width: 325px;
-    height: 100% !important;
-  }
-  #karma {
-    margin-top: 1.5rem;
-  }
-  .svg {
-    margin-top: 1rem;
   }
 }
 /*# sourceMappingURL=FeatureStyle2.css.map */
