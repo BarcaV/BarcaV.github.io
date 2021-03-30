@@ -379,6 +379,7 @@ h6 {
   }
   .left {
     padding: 1.5rem;
+    border-bottom-left-radius: 0 !important;
   }
   .left div {
     height: auto !important;
@@ -394,6 +395,7 @@ h6 {
   .right {
     padding: 1.5rem;
     row-gap: 1rem;
+    border-bottom-left-radius: 0.3125rem;
   }
   .right div {
     font-size: 0.9rem;
@@ -427,6 +429,7 @@ h6 {
   }
   .left {
     padding: 1.5rem;
+    border-bottom-left-radius: 0;
   }
   .left div {
     height: auto !important;
@@ -442,6 +445,7 @@ h6 {
   .right {
     padding: 1.5rem;
     row-gap: 1rem;
+    border-bottom-left-radius: 0.3125rem;
   }
   .right div {
     font-size: 0.9rem;
