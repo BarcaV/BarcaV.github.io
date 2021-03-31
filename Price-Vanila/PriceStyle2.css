@@ -85,12 +85,12 @@ body {
   font-family: 'Karla';
 }
 
-h5 {
-  font-size: 1.25rem;
+h4 {
+  font-size: calc(1.275rem + 0.3vw);
 }
 
-h6 {
-  font-size: 1rem;
+h5 {
+  font-size: 1.25rem;
 }
 
 .d-flex {
@@ -118,11 +118,11 @@ h6 {
 }
 
 .container .grid {
-  width: 42.5vw;
-  min-width: 530px;
+  width: 47.5vw;
+  min-width: 600px;
   max-width: 130.95vh;
-  height: 31.48148vw;
-  min-height: 390px;
+  height: 35.18519vw;
+  min-height: 444px;
   max-height: 97vh;
   -webkit-box-shadow: 0 0.5rem 0.8rem 0.5rem #C9DBE7;
           box-shadow: 0 0.5rem 0.8rem 0.5rem #C9DBE7;
@@ -141,7 +141,7 @@ h6 {
           justify-content: space-between;
 }
 
-.top h5 {
+.top h4 {
   font-weight: 700;
   color: #29B1AF;
 }
@@ -153,7 +153,7 @@ h6 {
           justify-content: space-between;
 }
 
-.top div h6 {
+.top div h5 {
   font-weight: 700;
   color: #BFDF34;
 }
@@ -225,7 +225,7 @@ h6 {
 }
 
 .right div {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   color: rgba(250, 250, 250, 0.7);
 }
@@ -233,10 +233,12 @@ h6 {
 /* Media Query */
 @media (min-width: 1400px) {
   .grid {
-    width: 40vw !important;
-    min-width: 640px !important;
-    height: 29.62963vw !important;
-    max-height: 475px !important;
+    width: 42.5vw !important;
+    min-width: 650px !important;
+    max-width: 700px !important;
+    height: 31.48148vw !important;
+    min-height: 481px !important;
+    max-height: 518px !important;
   }
 }
 
@@ -267,15 +269,18 @@ h6 {
     -ms-grid-column-span: 1;
     grid-area: 2 / 2 / span 1 / span 1;
   }
+  h4 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .grid {
-    width: 47.5vw !important;
-    min-width: 540px !important;
+    width: 50vw !important;
+    min-width: 545px !important;
     max-width: 130.95vh !important;
-    height: 35.18519vw !important;
-    min-height: 380px !important;
+    height: 37.03704vw !important;
+    min-height: 403px !important;
     max-height: 97vh !important;
     -ms-grid-rows: 0.8fr 1fr;
     -ms-grid-columns: (1fr)[2];
@@ -320,11 +325,11 @@ h6 {
   .container .grid {
     margin: 4rem 2rem;
     width: 70vw !important;
-    min-width: 300px !important;
-    max-width: 615px !important;
+    min-width: 575px !important;
+    max-width: 97vw !important;
     height: 51.85185vw !important;
-    min-height: 200px !important;
-    max-height: 455px !important;
+    min-height: 425.925px !important;
+    max-height: 71.85185vw !important;
     -ms-grid-rows: 0.8fr 1fr;
     -ms-grid-columns: (1fr)[2];
         grid-template: 0.8fr 1fr/repeat(2, 1fr);
@@ -370,7 +375,7 @@ h6 {
   .top div {
     height: auto !important;
   }
-  .top div h6 {
+  .top div h5 {
     margin-top: 1rem;
   }
   .top div p {
@@ -420,7 +425,7 @@ h6 {
   .top div {
     height: auto !important;
   }
-  .top div h6 {
+  .top div h5 {
     margin-top: 1rem;
   }
   .top div p {
@@ -446,9 +451,6 @@ h6 {
     padding: 1.5rem;
     row-gap: 1rem;
     border-bottom-left-radius: 0.3125rem;
-  }
-  .right div {
-    font-size: 0.9rem;
   }
 }
 /*# sourceMappingURL=PriceStyle2.css.map */
