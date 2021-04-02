@@ -957,7 +957,7 @@ footer .icons-container .icons .icons:active {
 @media (max-width: 575px) {
   body {
     background-image: url("Huddle Images/bg-mobile.svg");
-    background-size: 100% 55%;
+    background-size: 100% 40%;
     background-repeat: no-repeat;
   }
   .grid {
@@ -974,7 +974,7 @@ footer .icons-container .icons .icons:active {
             justify-content: center;
   }
   section .ilustration {
-    width: 70%;
+    width: 75%;
     height: 50vw;
     min-height: 100px;
     max-height: 285px;
