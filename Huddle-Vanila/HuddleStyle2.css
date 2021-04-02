@@ -974,10 +974,11 @@ footer .icons-container .icons .icons:active {
             justify-content: center;
   }
   section .ilustration {
-    width: 90%;
-    height: 60vw;
+    width: 95%;
+    max-width: 370px;
+    height: 62.5vw;
     min-height: 100px;
-    max-height: 355px;
+    max-height: 265px;
   }
   main {
     -webkit-box-pack: center;
