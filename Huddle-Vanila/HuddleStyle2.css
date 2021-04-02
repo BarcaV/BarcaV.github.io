@@ -957,7 +957,7 @@ footer .icons-container .icons .icons:active {
 @media (max-width: 575px) {
   body {
     background-image: url("Huddle Images/bg-mobile.svg");
-    background-size: 100% 45%;
+    background-size: 100% 50%;
     background-repeat: no-repeat;
   }
   .grid {
@@ -977,7 +977,7 @@ footer .icons-container .icons .icons:active {
     width: 90%;
     height: 60vw;
     min-height: 100px;
-    max-height: 300px;
+    max-height: 355px;
   }
   main {
     -webkit-box-pack: center;
