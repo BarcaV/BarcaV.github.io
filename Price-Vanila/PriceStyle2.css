@@ -201,6 +201,8 @@ h5 {
 .left .button {
   height: 25%;
   background-color: #BFDF34;
+  color: #FFFFFF;
+  text-decoration: none;
   border-radius: 0.3125rem;
   -webkit-box-shadow: 0 0rem 0.8rem 0.5rem #26A5A3;
           box-shadow: 0 0rem 0.8rem 0.5rem #26A5A3;
@@ -210,6 +212,17 @@ h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.left .button:hover {
+  background-color: #94AF1C;
+  border: 0.2rem solid #BFDF34;
+  -webkit-box-shadow: 0 0rem 0.8rem 0.5rem #208C8A;
+          box-shadow: 0 0rem 0.8rem 0.5rem #208C8A;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 /* Information */
