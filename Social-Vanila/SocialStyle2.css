@@ -238,15 +238,22 @@ h5 {
 }
 
 /* Media Query */
+@media (min-width: 1400px) {
+  .grid {
+    max-width: 1156px !important;
+    max-height: 563.9px !important;
+  }
+}
+
 @media (min-width: 1200px) {
   .container {
     height: 100vh;
   }
   .container .grid {
     width: 80vw;
-    max-width: 1156px;
+    max-width: 194vh;
     height: 40vw;
-    max-height: 563.9px;
+    max-height: 97vh;
     -ms-grid-rows: 1fr 1fr;
     -ms-grid-columns: 1fr 0.9fr;
         grid-template: 1fr 1fr / 1fr 0.9fr;
@@ -336,7 +343,9 @@ h5 {
   }
   .container .grid {
     width: 85vw;
+    max-width: 194vh;
     height: 42.5vw;
+    max-height: 97vh;
     -ms-grid-rows: 1fr 1fr;
     -ms-grid-columns: 1fr 1fr;
         grid-template: 1fr 1fr / 1fr 1fr;
