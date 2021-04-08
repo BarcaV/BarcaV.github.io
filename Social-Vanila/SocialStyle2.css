@@ -433,11 +433,21 @@ h5 {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  body {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .container .grid {
     margin: 3rem;
     -ms-grid-rows: 1fr 0.6fr 1fr;
     -ms-grid-columns: 1fr;
         grid-template: 1fr 0.6fr 1fr / 1fr;
+    row-gap: 2rem;
   }
   .container .grid .main-container {
     -ms-grid-row: 1;
@@ -546,6 +556,12 @@ h5 {
   }
   .coments article .coment .header div {
     margin-left: 0.5rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) and (max-height: 845px) {
+  body {
+    height: auto !important;
   }
 }
 

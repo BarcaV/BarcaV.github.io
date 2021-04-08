@@ -434,6 +434,15 @@ p {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  body {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .grid {
     min-width: 695px;
     -ms-grid-rows: (1fr)[5] 0.6fr;
@@ -481,6 +490,12 @@ p {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-area: 5 / 1 / span 2 / span 3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) and (max-height: 876px) {
+  body {
+    height: auto !important;
   }
 }
 
