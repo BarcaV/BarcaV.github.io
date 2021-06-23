@@ -1,0 +1,726 @@
+@charset "UTF-8";
+/* Normalize */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* Fonts */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm459WxRxC7mw9c.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm459WxRzS7mw9c.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm459WxRxi7mw9c.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm459WxRxy7mw9c.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUQjIg1_i6t8kCHKm459WxRyS7m.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZFgrz8fZwnCo.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZFgrz-PZwnCo.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZFgrz8_ZwnCo.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZFgrz8vZwnCo.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZFgrz_PZw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gTD_u50.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3g3D_u50.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gbD_u50.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gfD_u50.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Variables */
+/* Generales */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', 'San-Serif';
+  font-weight: 700;
+  color: #EEEEEE;
+  background-color: #11D4B3;
+}
+
+.container {
+  height: 100Vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calculadora {
+  padding: 1.5rem 0;
+  background-color: #303030;
+  border-radius: 1.5rem;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.1rem 0.2rem #141414, 0.6rem 0.6rem 1rem 0.6rem #0B8D77;
+          box-shadow: 0.2rem 0.2rem 0.1rem 0.2rem #141414, 0.6rem 0.6rem 1rem 0.6rem #0B8D77;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1.8fr (0.8fr)[5];
+  -ms-grid-columns: 1fr;
+      grid-template: 1.8fr repeat(5, 0.8fr)/1fr;
+}
+
+.contenedor-pantalla {
+  padding: 0 1.5rem 1.2rem 1.5rem;
+  width: 100%;
+}
+
+.contenedor-pantalla .display {
+  padding: 0.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #CCCCCC;
+  border: 0.8rem solid #7F7F7F;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.contenedor-pantalla .display div {
+  height: 50%;
+  max-height: 50%;
+  color: #303030;
+  background-color: #CCCCCC;
+  text-align: right;
+}
+
+.contenedor-pantalla .display #pantallaArriba {
+  padding: 0.8rem 0;
+  font-size: 1.5rem;
+  white-space: pre;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.contenedor-pantalla .display #pantallaArriba::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 1rem;
+}
+
+.contenedor-pantalla .display #pantallaArriba::-webkit-scrollbar-button:increment {
+  width: 1rem;
+  height: 1rem;
+  background-image: url("iconfinder_383079_arrow_double_right_icon.svg");
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.contenedor-pantalla .display #pantallaArriba::-webkit-scrollbar-button:increment:active {
+  width: 1rem;
+  height: 1rem;
+}
+
+.contenedor-pantalla .display #pantallaArriba::-webkit-scrollbar-button:decrement {
+  width: 1rem;
+  height: 1rem;
+  background-image: url("iconfinder_383152_arrow_double_left_icon.svg");
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.contenedor-pantalla .display #pantallaArriba::-webkit-scrollbar-button:decrement:active {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.contenedor-pantalla .display #pantallaArriba::-webkit-scrollbar-track {
+  height: 0.1rem;
+}
+
+.contenedor-pantalla .display #pantallaAbajo {
+  width: 100%;
+  font-size: 1.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedor-botones {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1.5rem;
+}
+
+.contenedor-botones .subcontenedor-botones {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button {
+  width: 20%;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.number {
+  background-color: #EFEFEF;
+  -webkit-box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #A0A0A0;
+          box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #A0A0A0;
+}
+
+.number:active {
+  font-size: 1.1rem;
+  background-color: #D3D3D3;
+  -webkit-box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #D3D3D3;
+          box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #D3D3D3;
+  -webkit-transition: all 0.01s linear;
+  transition: all 0.01s linear;
+}
+
+.iqual {
+  background-color: #179900;
+  -webkit-box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #116600;
+          box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #116600;
+}
+
+.iqual:active {
+  font-size: 1.1rem;
+  background-color: #116600;
+  -webkit-box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #116600;
+          box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #116600;
+  -webkit-transition: all 0.01s linear;
+  transition: all 0.01s linear;
+}
+
+.operator {
+  background-color: #00B8DD;
+  -webkit-box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #006175;
+          box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #006175;
+  -webkit-transition: all 0.01s linear;
+  transition: all 0.01s linear;
+}
+
+.operator:active {
+  font-size: 1.1rem;
+  background-color: #00A1C1;
+  -webkit-box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #00A1C1;
+          box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #00A1C1;
+  -webkit-transition: all 0.01s linear;
+  transition: all 0.01s linear;
+}
+
+.delete {
+  background-color: #CB0600;
+  -webkit-box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #600100;
+          box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #600100;
+}
+
+.delete:active {
+  font-size: 1.1rem;
+  background-color: #930200;
+  -webkit-box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #930200;
+          box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #930200;
+  -webkit-transition: all 0.01s linear;
+  transition: all 0.01s linear;
+}
+
+.especiales {
+  background-color: #B2B2B2;
+  -webkit-box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #7F7F7F;
+          box-shadow: 0.07rem 0.1rem 0.1rem 0.13rem #7F7F7F;
+}
+
+.especiales:active {
+  font-size: 1.1rem;
+  background-color: #969696;
+  -webkit-box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #969696;
+          box-shadow: 0.04rem 0.07rem 0.1rem 0.1rem #969696;
+  -webkit-transition: all 0.01s linear;
+  transition: all 0.01s linear;
+}
+
+.pequeño {
+  font-size: 1.2rem !important;
+}
+
+/* Media Query */
+@media (min-width: 1400px) {
+  .calculadora {
+    width: 25vw;
+    max-width: 400px;
+    height: calc(25vw*1.5);
+    max-height: calc(400px*1.5);
+  }
+  .calculadora .contenedor-pantalla {
+    width: 25vw;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .calculadora {
+    width: 30vw;
+    height: calc(30vw*1.5);
+  }
+  .calculadora .contenedor-pantalla {
+    width: 30vw;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .calculadora {
+    width: 35vw;
+    height: calc(35vw*1.5);
+  }
+  .calculadora .contenedor-pantalla {
+    width: 35vw;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+  .calculadora {
+    width: 40vw;
+    height: calc(40vw*1.5);
+  }
+  .calculadora .contenedor-pantalla {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .calculadora {
+    width: 45vw;
+    height: calc(45vw*1.5);
+  }
+  .calculadora .contenedor-pantalla {
+    width: 45vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .calculadora {
+    padding: 2rem 0;
+    width: 100vw;
+    max-width: 90vh;
+    height: calc(100vw*1.7);
+    max-height: 100vh;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -ms-grid-rows: 2fr (0.8fr)[5];
+    -ms-grid-columns: 1fr;
+        grid-template: 2fr repeat(5, 0.8fr)/1fr;
+  }
+  .calculadora .contenedor-pantalla {
+    width: 100vw;
+    max-width: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .calculadora .contenedor-pantalla .display {
+    max-width: 450px;
+  }
+  .calculadora .contenedor-botones {
+    width: 100vw;
+    max-width: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .calculadora .contenedor-botones .subcontenedor-botones {
+    max-width: 450px;
+  }
+}
+/*# sourceMappingURL=Calculadora.css.map */
