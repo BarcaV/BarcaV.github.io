@@ -66,7 +66,7 @@ menusButton.addEventListener("click", () => {
 });
 iqualButton.addEventListener("click", () => {
     if (validacionIgual === false) {
-        igual(acumulado);
+        igual(acumulado.toString());
         validacionIgual = true;
         validacionUnToque = true;
     }
@@ -75,7 +75,7 @@ numbersButton.forEach(boton => {
     boton.addEventListener("click", () => {
         if (operacion === undefined) {
             agregarNumAnterior(boton.innerText);
-            if (numAnterior.toString().length === 21) {
+            if (numAnterior.toString().length === 13) {
                 pantallaAbajo.classList.toggle("pequeño")
             }
             if (validacionIgual = true) {
@@ -86,10 +86,10 @@ numbersButton.forEach(boton => {
             validacionSegundoToque = false;
             validacionUnToque = false;
         } else {
-            if (pantallaAbajo.className === "pequeño" && numActual.toString().length < 21) {
+            if (pantallaAbajo.className === "pequeño" && numActual.toString().length < 13) {
                 pantallaAbajo.classList.toggle("pequeño")
             }
-            if (numActual.toString().length === 20) {
+            if (numActual.toString().length === 12) {
                 pantallaAbajo.classList.toggle("pequeño")
             }
             agregarNumActual(boton.innerText);
@@ -101,27 +101,36 @@ numbersButton.forEach(boton => {
 });
 operatorsButton.forEach(boton => {
     boton.addEventListener("click", () => {
+        let container;
         if (pantallaAbajo.innerText !== "" || pantallaArriba.innerText !== "") {
             selectorOperador(boton.innerText);
-            if (validacionSegundoToque === true) {
-                numAnterior = acumulado;
-                validacionSegundoToque = false;
-            }
             if (validacionUnToque === false) {
                 i += 1;
-                pantallaRegistro(pantallaAbajo.innerText, boton.innerText);
-                actualizarDisplay(numAnterior);
+                container = numAnterior
+                if (acumulado.toString() !== "") {
+                    container = acumulado;
+                    if (container.toString().includes("e")) {
+                        container = exponenciales(container);
+                    }
+                }
+                pantallaRegistro(pantallaAbajo.innerHTML, boton.innerText);
+                actualizarDisplay(container);
                 validacionUnToque = true;
                 if (pantallaAbajo.className === "pequeño" && numActual !== "") {
                     pantallaAbajo.classList.toggle("pequeño")
                 }
             } 
+            if (validacionSegundoToque === true) {
+                numAnterior = acumulado;
+                validacionSegundoToque = false;
+            }
             if (validacionIgual === true) {
+                numAnterior = acumulado;
                 pantallaArriba.innerText = "";
                 pantallaRegistro(acumulado, boton.innerText);
                 validacionIgual = false;
             }
-        numActual = "";
+            numActual = "";
         }
     })
 });
@@ -129,7 +138,7 @@ operatorsButton.forEach(boton => {
 
 const agregarNumAnterior = num => {
     var container;
-    if (numAnterior.toString().length < 28) {
+    if (numAnterior.toString().length < 18) {
         numAnterior += num.toString();
         actualizarDisplay(numAnterior);
         if (num === ".") {
@@ -138,14 +147,15 @@ const agregarNumAnterior = num => {
         if (validacionMenos === true && numAnterior.length === 1) {
             container = numAnterior;
             container = parseFloat(container) * -1;
-            actualizarDisplay(container.toString());
+            numAnterior = container.toString();
+            actualizarDisplay(numAnterior);
             validacionMenos = false;
             return;
         }
     }
 };
 const agregarNumActual = num => {
-    if (numActual.toString().length < 28) {
+    if (numActual.toString().length < 18) {
         numActual += num.toString();
         actualizarDisplay(numActual);
         if (num === ".") {
@@ -160,7 +170,8 @@ const selectorOperador = op => {
         container = pantallaArriba.innerText.split("");
         container.pop();
         container.pop();
-        pantallaArriba.innerText = container.join("") + " " + operacion;
+        container = container.join("");
+        pantallaRegistro(container, operacion);
         return
     }
     operacion = op.toString();
@@ -189,20 +200,37 @@ const calcular = () => {
 }
 const borrar = () => {
     let container;
-    if (numAnterior !== "" && numActual === "" && validacionIgual === false && validacionUnToque === false) {
-        container = numAnterior.toString().split("");    
-        container.pop()
-        container = container.join("");
-        container = parseFloat(container);
-        numAnterior = container.toString();
-        pantallaAbajo.innerText = container;
+    if (numAnterior !== "" && numActual === "" && operacion === undefined && validacionIgual === false && validacionUnToque === false) {
+        if (numAnterior.length > 1) {
+            if (numAnterior.length === 13) {
+                pantallaAbajo.classList.toggle("pequeño")
+            }
+            container = numAnterior.toString().split("");
+            container.pop()
+            container = container.join("");
+            container = parseFloat(container);
+            numAnterior = container.toString();
+            actualizarDisplay(numAnterior);
+        } else if (numAnterior.length === 1) {
+            numAnterior = "";
+            actualizarDisplay(numAnterior);
+        }
     } else if (numActual !== "" && validacionIgual === false && validacionUnToque === false){
-        container = numActual.toString().split("");
-        container.pop()
-        container = parseFloat(container);
-        numActual = container.toString();
-        calcular();
-        pantallaAbajo.innerText = container;
+        if (numActual.length > 1) {
+            if (numActual.length === 13) {
+                pantallaAbajo.classList.toggle("pequeño")
+            }
+            container = numActual.toString().split("");
+            container.pop()
+            container = container.join("");
+            container = parseFloat(container);
+            numActual = container.toString();
+            calcular();
+            actualizarDisplay(numActual);
+        } else if (numActual.length === 1) {
+            numActual = "";
+            actualizarDisplay(numActual);
+        }
     }
 }
 const parcial = () =>{
@@ -227,27 +255,118 @@ const eliminar = () => {
     actualizarDisplay("");
 }
 const igual = final => {
+    let container = numActual;
+    
     if (pantallaAbajo.className === "pequeño") {
         pantallaAbajo.classList.toggle("pequeño");
     }
-    pantallaRegistro(numActual, "");
+    if (final.length > 12 && final.includes("e") !== true) {
+        final = exponenciales(final);
+        container = final;
+    } else if (final.includes("e")) {
+        final = exponenciales(final);
+        container = final;
+    }
+    
+    pantallaRegistro(container, "");
     numAnterior = "";
     numActual = "";
     operacion = undefined;
     actualizarDisplay(final);
 } 
 const actualizarDisplay = valor => {
-    pantallaAbajo.innerText = valor;
+    pantallaAbajo.innerHTML = `<p>${valor}</p>`;
 };
 const pantallaRegistro = (valor, operador) => {
-    if (operador === "") {
-        pantallaArriba.innerText = pantallaArriba.innerText.toString() + " " + valor.toString();
-    }
+    let container;
     if (pantallaArriba.innerText === "") {
-        pantallaArriba.innerText = pantallaArriba.innerText.toString() + valor.toString() + " " + operador.toString();
-    } else if (pantallaArriba.innerText !== "" && operador !== "") {
-        pantallaArriba.innerText = pantallaArriba.innerText.toString() + " " + valor.toString() + " " + operador.toString();
+        pantallaArriba.innerHTML = `<p>${valor} ${operador}</p>`
+    } else if (pantallaArriba.Text !== "" && valor !== "" && operador !== "") {
+        if (operador === "/" || operador === "-" && acumulado !== "") {
+            pantallaArriba.innerHTML = `<p>${acumulado.toString()} ${operador}</p>`
+            return;
+        }
+        pantallaArriba.innerHTML = `${pantallaArriba.innerHTML} <p>${valor} ${operador}</p>`
+    } else if (pantallaArriba.Text !== "" && valor !== "" && operador === "") {
+        pantallaArriba.innerHTML = `${pantallaArriba.innerHTML} <p>${valor}</p>`
+    } else if (pantallaArriba.Text !== "" && valor === "" && operador === "") {
+        container = pantallaArriba.innerHTML.toString();
+        container = container.split("");
+        for (i = 0; i <= 9; i++) {
+            container.pop();
+        }
+        container = container.join("");
+        pantallaArriba.innerHTML = `<p>${container}</p>`;
     }
 };
-
+const exponenciales = (final) => {
+    let container;
+    let exp;
+    final = final.toString();
+    
+    if (final.length > 12 && final.includes("e") !== true) {
+        if (acumulado > 0) {
+            exp = "+" + final.length.toString();
+        } else if (acumulado < 0) {
+            exp = "-" + final.length.toString();
+        }
+        if (final.length < 100) {
+            final = final.substr(0, 8);
+            final = final.split("");
+            final.splice(1, 0, ".");
+            final = final.join("");
+            final = `${final}E<span>${exp}</span>`;
+        } else {
+            final = final.substr(0, 7);
+            final = final.split("");
+            final.splice(1, 0, ".");
+            final = final.join("");
+            final = `${final}E<span>${exp}</span>`;
+        }
+    } else {
+        container = final.length - final.indexOf("e");
+        if (final.includes("+")) {
+            exp = "+";
+            if (container === 3) {
+                exp = exp + final.substr(final.indexOf("+") + 1, 1)
+            }
+            if (container === 4) {
+                exp = exp + final.substr(final.indexOf("+") + 1, 2)
+            }
+            if (container === 5) {
+                exp = exp + final.substr(final.indexOf("+") + 1, 3)
+            }
+            if (container === 6) {
+                exp = exp + final.substr(final.indexOf("+") + 1, 4)
+            }
+            if (container === 7) {
+                exp = exp + final.substr(final.indexOf("+") + 1, 5)
+            }
+        } else if (final.includes("-")){
+            exp = "-";
+            if (container === 3) {
+                exp = exp + final.substr(final.indexOf("-") + 1, 1)
+            }
+            if (container === 4) {
+                exp = exp + final.substr(final.indexOf("-") + 1, 2)
+            }
+            if (container === 5) {
+                exp = exp + final.substr(final.indexOf("-") + 1, 3)
+            }
+            if (container === 6) {
+                exp = exp + final.substr(final.indexOf("-") + 1, 4)
+            }
+            if (container === 7) {
+                exp = exp + final.substr(final.indexOf("-") + 1, 5)
+            }
+        }
+        if (final.length > 12) {
+            final = final.substr(0, 8);
+        } else {
+            final = final.substr(0, final.indexOf("e"))
+        }
+        final = `${final}E<span>${exp}</span>`;
+    }
+    return final;
+}
 
