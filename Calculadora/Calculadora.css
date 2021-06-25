@@ -807,7 +807,8 @@ body {
 }
 
 .button {
-  -webkit-appearance: none;
+  -webkit-appearance: unset;
+  outline: none;
   width: 20%;
   height: 100%;
   font-size: 1.2rem;
@@ -882,6 +883,7 @@ span {
     max-width: 340px;
   }
   #pantallaArriba {
+    padding: calc(0.5rem + 1vw) 0;
     font-size: calc(0.0005rem + 1.8vw);
   }
   #pantallaAbajo {
@@ -899,7 +901,8 @@ span {
     width: 25vw;
   }
   #pantallaArriba {
-    font-size: calc(0.0005rem + 1.8vw);
+    padding: calc(0.5rem + 2.1vw) 0;
+    font-size: calc(0.0005rem + 2vw);
   }
   #pantallaAbajo {
     font-size: calc(0.0005rem + 2.86vw);
@@ -916,7 +919,8 @@ span {
     width: 30vw;
   }
   #pantallaArriba {
-    font-size: calc(0.0005rem + 1.8vw);
+    padding: calc(0.5rem + 2.85vw) 0;
+    font-size: calc(0.0005rem + 2.3vw);
   }
   #pantallaAbajo {
     font-size: calc(0.0005rem + 3.35vw);
@@ -933,7 +937,8 @@ span {
     width: 35vw;
   }
   #pantallaArriba {
-    font-size: calc(0.0005rem + 1.8vw);
+    padding: calc(0.5rem + 2.86vw) 0;
+    font-size: calc(0.0005rem + 2.7vw);
   }
   #pantallaAbajo {
     font-size: calc(0.0005rem + 4.005vw);
@@ -950,7 +955,8 @@ span {
     width: 40vw;
   }
   #pantallaArriba {
-    font-size: calc(0.0005rem + 1.8vw);
+    padding: calc(0.5rem + 3.7vw) 0;
+    font-size: calc(0.0005rem + 3.5vw);
   }
   #pantallaAbajo {
     font-size: calc(0.0005rem + 4.4vw);
@@ -961,13 +967,13 @@ span {
   .calculadora {
     padding: 2.5vh 0;
     width: 100vw;
-    height: calc(100vw*2.2);
+    height: 100vh;
     max-height: 100vh;
     border-radius: 0;
     grid-template: none !important;
   }
   .calculadora .contenedor-pantalla {
-    padding: 1.2rem calc(2rem + 2vw);
+    padding: 1.2rem calc(0.5rem + 6vw);
     width: 100vw;
     height: 40vh;
     display: -webkit-box;
@@ -999,10 +1005,16 @@ span {
     width: 20%;
   }
   #pantallaArriba {
-    font-size: calc(0.0005rem + 1.8vw);
+    padding: calc(0.5rem + 6vw) 0;
+    font-size: calc(0.5rem + 5vw);
+  }
+  #pantallaArriba::-webkit-scrollbar-thumb {
+    height: 0.25rem;
+    background-color: rgba(225, 225, 225, 0.8);
+    border-radius: 2rem;
   }
   #pantallaAbajo {
-    font-size: calc(0.5rem + 8vw);
+    font-size: calc(0.5rem + 8.75vw);
   }
 }
 /*# sourceMappingURL=Calculadora.css.map */
