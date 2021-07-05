@@ -771,7 +771,7 @@ body {
             align-items: flex-start;
   }
   .container .subcontainer {
-    width: 80vw;
+    width: 87.5vw;
     -ms-grid-rows: 0.6fr 0.4fr 1fr 1fr !important;
     -ms-grid-columns: 1fr !important;
         grid-template: 0.6fr 0.4fr 1fr 1fr / 1fr !important;
