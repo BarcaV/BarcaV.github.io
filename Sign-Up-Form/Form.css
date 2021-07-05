@@ -364,12 +364,19 @@ body {
 }
 
 .form .form__container .form__group .form__group-input .label {
+  height: 90%;
   font-size: 0.9rem;
   font-weight: 600;
   opacity: 0.6;
   position: absolute;
   left: 1rem;
-  bottom: calc(0.05rem + 22.5%);
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
 }
@@ -380,6 +387,7 @@ body {
   height: 90%;
   border: 0.05rem solid rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.8);
   -webkit-transition: .3s ease all;
@@ -393,10 +401,10 @@ body {
 }
 
 .form .form__container .form__group .form__group-input i {
-  height: 24px;
+  height: 90%;
   position: absolute;
   right: 1rem;
-  bottom: calc(0.05rem + 20%);
+  bottom: 0;
   display: none;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
@@ -481,13 +489,18 @@ body {
 }
 
 .label-focus {
+  height: 100%;
   font-size: 0.8rem;
   font-weight: 600;
   opacity: 0.5;
   position: absolute;
   left: 1rem;
-  top: 0;
-  bottom: unset !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
 }
@@ -499,8 +512,20 @@ body {
   transition: .3s ease all;
 }
 
-.active {
+.active-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.active-block {
   display: block !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .border-purple {
@@ -526,7 +551,7 @@ body {
 }
 
 .upper {
-  bottom: calc(0.05rem + 5%) !important;
+  height: 60% !important;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
 }
@@ -708,10 +733,16 @@ body {
     -ms-grid-columns: 1fr !important;
         grid-template: repeat(5, 1fr) 0.3fr/1fr !important;
   }
-  .form .form__container .form__group__submit {
+  .form .form__container .form__group {
+    min-height: 5.12815rem;
+  }
+  .form .form__container .form__group .form__group-input {
+    min-height: 3.3333rem;
+  }
+  .form .form__container .form__group .form__group__submit {
     grid-row: span 2;
   }
-  .form .form__container .form__group__submit .form__terms-services {
+  .form .form__container .form__group .form__group__submit .form__terms-services {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -726,6 +757,9 @@ body {
 }
 
 @media (max-width: 599px) {
+  body {
+    background-image: url("images/bg-intro-mobile.png") !important;
+  }
   .container {
     padding-top: 10vw;
     padding-bottom: 5vw;
@@ -781,24 +815,18 @@ body {
     -ms-grid-columns: 1fr !important;
         grid-template: repeat(5, 1fr) 0.35fr/1fr !important;
   }
-  .form .form__container i {
-    height: 20px !important;
-    position: absolute;
-    right: 1rem;
-    bottom: calc(0.05rem + 20%);
-    display: none;
-    -webkit-transition: .3s ease all;
-    transition: .3s ease all;
+  .form .form__container .form__group {
+    min-height: 5.12815rem;
   }
-  .form .form__container i svg {
+  .form .form__container .form__group .form__group-input {
+    min-height: 3.3333rem;
+  }
+  .form .form__container .form__group .form__group-input i svg {
     width: 20px;
     height: 20px;
   }
   .form .form__container .form__group__submit {
     grid-row: span 2;
-  }
-  .form .form__container .form__group__submit .form__group-button {
-    min-height: 47.55px;
   }
   .form .form__container .form__group__submit .form__terms-services {
     display: -webkit-box;

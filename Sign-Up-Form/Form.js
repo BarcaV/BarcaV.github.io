@@ -61,26 +61,26 @@ submit.addEventListener("click", boton => {
     if (input[0].value === "") {
         input[0].classList.add("border-red");
         label[0].classList.add("color-red");
-        emptyAlert[0].classList.add("active");
-        invalid[0].classList.add("active");
+        emptyAlert[0].classList.add("active-block");
+        invalid[0].classList.add("active-flex");
     }
     if (input[1].value === "") {
         input[1].classList.add("border-red");
         label[1].classList.add("color-red");
-        emptyAlert[1].classList.add("active");
-        invalid[1].classList.add("active");
+        emptyAlert[1].classList.add("active-block");
+        invalid[1].classList.add("active-flex");
     }
     if (input[2].value === "") {
         input[2].classList.add("border-red");
         label[2].classList.add("color-red");
-        emptyAlert[2].classList.add("active");
-        invalid[2].classList.add("active");
+        emptyAlert[2].classList.add("active-block");
+        invalid[2].classList.add("active-flex");
     }
     if (input[3].value === "") {
         input[3].classList.add("border-red");
         label[3].classList.add("color-red");
-        emptyAlert[3].classList.add("active");
-        invalid[3].classList.add("active");
+        emptyAlert[3].classList.add("active-block");
+        invalid[3].classList.add("active-flex");
     }
 })
 
@@ -113,14 +113,14 @@ const nameTest = (text, index) => {
     if (expresiones.nombreApellido.test(text.value)) {
         label[index].classList.remove("color-red");
         input[index].classList.remove("border-red");
-        emptyAlert[index].classList.remove("active");
-        invalid[index].classList.remove("active");
-        errorAlert[index].classList.remove("active");
-        error[index].classList.remove("active");
+        emptyAlert[index].classList.remove("active-block");
+        invalid[index].classList.remove("active-flex");
+        errorAlert[index].classList.remove("active-block");
+        error[index].classList.remove("active-flex");
         if (validaciones[index] === true) {
             input[index].classList.add("border-green");
             label[index].classList.add("color-green");
-            check[index].classList.add("active")
+            check[index].classList.add("active-flex");
             validaciones[index] = false;
         }
     } else {
@@ -128,17 +128,17 @@ const nameTest = (text, index) => {
         input[index].classList.add("border-red");
         input[index].classList.remove("border-green");
         label[index].classList.remove("color-green");
-        check[index].classList.remove("active")
+        check[index].classList.remove("active-flex");
         if (text.value === "") {
-            emptyAlert[index].classList.add("active");
-            invalid[index].classList.add("active");
-            errorAlert[index].classList.remove("active");
-            error[index].classList.remove("active");
+            emptyAlert[index].classList.add("active-block");
+            invalid[index].classList.add("active-flex");
+            errorAlert[index].classList.remove("active-block");
+            error[index].classList.remove("active-flex");
         } else {
-            errorAlert[index].classList.add("active");
-            error[index].classList.add("active");
-            emptyAlert[index].classList.remove("active");
-            invalid[index].classList.remove("active");
+            errorAlert[index].classList.add("active-block");
+            error[index].classList.add("active-flex");
+            emptyAlert[index].classList.remove("active-block");
+            invalid[index].classList.remove("active-flex");
         }
     }
 }
@@ -147,14 +147,14 @@ const emailTest = (text, index) => {
     if (expresiones.email.test(text.value)) {
         label[index].classList.remove("color-red");
         input[index].classList.remove("border-red");
-        emptyAlert[index].classList.remove("active");
-        invalid[index].classList.remove("active");
-        errorAlert[index].classList.remove("active");
-        error[index].classList.remove("active");
+        emptyAlert[index].classList.remove("active-block");
+        invalid[index].classList.remove("active-flex");
+        errorAlert[index].classList.remove("active-block");
+        error[index].classList.remove("active-flex");
         if (validaciones[index] === true) {
             input[index].classList.add("border-green");
             label[index].classList.add("color-green");
-            check[index].classList.add("active")
+            check[index].classList.add("active-flex");
             validaciones[index] = false;
         }
     } else {
@@ -162,17 +162,17 @@ const emailTest = (text, index) => {
         input[index].classList.add("border-red");
         input[index].classList.remove("border-green");
         label[index].classList.remove("color-green");
-        check[index].classList.remove("active")
+        check[index].classList.remove("active-flex");
         if (text.value === "") {
-            emptyAlert[index].classList.add("active");
-            invalid[index].classList.add("active");
-            errorAlert[index].classList.remove("active");
-            error[index].classList.remove("active");
+            emptyAlert[index].classList.add("active-block");
+            invalid[index].classList.add("active-flex");
+            errorAlert[index].classList.remove("active-block");
+            error[index].classList.remove("active-flex");
         } else {
-            errorAlert[index].classList.add("active");
-            error[index].classList.add("active");
-            emptyAlert[index].classList.remove("active");
-            invalid[index].classList.remove("active");
+            errorAlert[index].classList.add("active-block");
+            error[index].classList.add("active-flex");
+            emptyAlert[index].classList.remove("active-block");
+            invalid[index].classList.remove("active-flex");
         }
     }
 }
@@ -181,14 +181,14 @@ const passwordTest = (text, index) => {
     if (expresiones.password.test(text.value)) {
         label[index].classList.remove("color-red");
         input[index].classList.remove("border-red");
-        emptyAlert[index].classList.remove("active");
-        invalid[index].classList.remove("active");
-        errorAlert[index].classList.remove("active");
-        error[index].classList.remove("active");
+        emptyAlert[index].classList.remove("active-block");
+        invalid[index].classList.remove("active-flex");
+        errorAlert[index].classList.remove("active-block");
+        error[index].classList.remove("active-flex");
         if (validaciones[index] === true) {
             input[index].classList.add("border-green");
             label[index].classList.add("color-green");
-            check[index].classList.add("active")
+            check[index].classList.add("active-flex");
             validaciones[index] = false;
         }
     } else {
@@ -196,17 +196,17 @@ const passwordTest = (text, index) => {
         input[index].classList.add("border-red");
         input[index].classList.remove("border-green");
         label[index].classList.remove("color-green");
-        check[index].classList.remove("active")
+        check[index].classList.remove("active-flex");
         if (text.value === "") {
-            emptyAlert[index].classList.add("active");
-            invalid[index].classList.add("active");
-            errorAlert[index].classList.remove("active");
-            error[index].classList.remove("active");
+            emptyAlert[index].classList.add("active-block");
+            invalid[index].classList.add("active-flex");
+            errorAlert[index].classList.remove("active-block");
+            error[index].classList.remove("active-flex");
         } else {
-            errorAlert[index].classList.add("active");
-            error[index].classList.add("active");
-            emptyAlert[index].classList.remove("active");
-            invalid[index].classList.remove("active");
+            errorAlert[index].classList.add("active-block");
+            error[index].classList.add("active-flex");
+            emptyAlert[index].classList.remove("active-block");
+            invalid[index].classList.remove("active-flex");
         }
     }
 }
