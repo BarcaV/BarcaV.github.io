@@ -1,7 +1,11 @@
 const projectContainer = document.querySelectorAll(".project__group");
 const degrade = document.querySelectorAll(".project__description");
 const degradeText = document.querySelectorAll(".project__container p");
+const inputs = document.querySelectorAll(".text-in");
+const labels = document.querySelectorAll(".label");
+const enviar = document.querySelector("#enviar");
 
+/* Gallery Animation */
 
 projectContainer.forEach((c, index) => {
     c.addEventListener("mouseover", () => {
@@ -35,5 +39,36 @@ const fade = index => {
         for (let i = index; i < j; i++) {
             degradeText[i].classList.toggle("fade");
         }
+    }
+}
+
+/* Contacto Animation */
+
+inputs.forEach((p, index) => {
+    p.addEventListener("focus", () => {
+        textOut(index);
+    })
+    p.addEventListener("blur", () => {
+        textIn(index);
+    })
+})
+
+const textOut = index => {
+    if (index === 2) {
+        inputs[index].style = "height: 90% !important";
+        labels[index].classList.toggle("label-out");
+    } else {
+        inputs[index].style = "height: 65%";
+        labels[index].classList.toggle("label-out");
+    }
+}
+
+const textIn = index => {
+    if (index === 2) {
+        inputs[index].style = "height: 95% !important";
+        labels[index].classList.toggle("label-out");
+    } else {
+        inputs[index].style = "height: 80%";
+        labels[index].classList.toggle("label-out");
     }
 }
