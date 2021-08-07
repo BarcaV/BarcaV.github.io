@@ -702,6 +702,10 @@ h3 {
   transition: all 0.1s ease;
 }
 
+#landing .landing header .nav-bar li a i {
+  display: none;
+}
+
 #landing #circle {
   width: 91.7647vw;
   height: 91.7647vw;
@@ -1682,8 +1686,19 @@ footer .redes-container .redes {
   #landing .landing .nav-bar .nav-li a {
     font-size: calc(0.75rem + 0.5vw) !important;
   }
+  #landing .landing .nav-bar .nav-li a span {
+    display: none;
+  }
+  #landing .landing .nav-bar .nav-li a i {
+    width: 2rem;
+    display: block;
+  }
+  #landing .landing .nav-bar .nav-li a i svg {
+    width: 100%;
+    height: 100%;
+  }
   #landing .landing .title {
-    width: 60% !important;
+    width: 80% !important;
     height: 45% !important;
     display: -webkit-box;
     display: -ms-flexbox;
