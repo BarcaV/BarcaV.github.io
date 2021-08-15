@@ -89,7 +89,7 @@
         let topStickyNavBar = $stickyNavBar.getBoundingClientRect().top;
         let bottomStickyNavBar = $stickyNavBar.getBoundingClientRect().bottom;
         let scrollDown = w.pageYOffset;
-        
+        console.log(scrollDown, viewHeight);
         navBarAnimation(topStickyNavBar, bottomStickyNavBar, scrollDown);
         if (viewWidth < 600) {
             homeAnimation(scrollDown, bottomStickyNavBar);
@@ -125,7 +125,7 @@
                 $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
             }
         } else {
-            if (bs <= viewHeight) {
+            if (sd >= 64) {
                 $icons.forEach(e => {e.classList.add("sticky_icons_active");});
                 $icons[0].classList.remove("sticky_icons_active");
             } else {
