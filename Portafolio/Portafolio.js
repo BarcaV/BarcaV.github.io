@@ -84,25 +84,41 @@
     const startPosition = w.pageYOffset;
     var viewHeight = w.innerHeight;
     var viewWidth = w.innerWidth;
+    var v;
+
 
     if (viewWidth >= 1000) {
+        v = true;
     } else {
         $stickyNavBar.remove();
         $main.insertAdjacentElement("beforeend", $stickyNavBar);
+        v = false;
     }
     
     d.addEventListener("scroll", () => {
         let topStickyNavBar = $stickyNavBar.getBoundingClientRect().top;
         let bottomStickyNavBar = $stickyNavBar.getBoundingClientRect().bottom;
         let scrollDown = w.pageYOffset;
-        navBarAnimation(topStickyNavBar, bottomStickyNavBar, scrollDown);
+        let actualWidth = w.innerWidth;
+
+        if (w.innerWidth >= 1000 && v === true) {
+            $stickyNavBar.remove();
+            $main.insertAdjacentElement("afterbegin", $stickyNavBar);
+            v = false;
+        } else if (w.innerWidth < 1000 && v === false) {
+            $stickyNavBar.remove();
+            $main.insertAdjacentElement("beforeend", $stickyNavBar);
+            v = true;
+        }
+
+        navBarAnimation(topStickyNavBar, bottomStickyNavBar, scrollDown, actualWidth);
         if (viewWidth < 600) {
             homeAnimation(scrollDown, bottomStickyNavBar);
         }
     })
     
-    const navBarAnimation = (ts, bs, sd) => {
-        if (viewWidth >= 1000) {
+    const navBarAnimation = (ts, bs, sd, aw) => {
+        if (aw >= 1000) {
             if (bs < viewHeight) {
                 $icons.forEach(e => {e.classList.add("sticky_icons_active");});
                 
@@ -116,7 +132,7 @@
             } else {
                 $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
             }
-        } else if (viewWidth >= 800) {
+        } else if (aw >= 800) {
             if (bs <= viewHeight) {
                 $icons.forEach(e => {e.classList.add("sticky_icons_active");});
                 if (bs >= (viewHeight / 2)) {
@@ -129,7 +145,7 @@
             } else {
                 $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
             }
-        } else if (viewWidth >= 600) {
+        } else if (aw >= 600) {
             if (bs <= viewHeight) {
                 $icons.forEach(e => {e.classList.add("sticky_icons_active");});
             } else {
