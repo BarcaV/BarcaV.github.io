@@ -1142,31 +1142,31 @@ h3 {
 }
 
 #portafolio .portafolio .img-container .n1 {
-  background-image: url("Portafolio Images/screencapture-file-D-Cristopher-Desarrollo-Web-Cris-Practicas-Portafolio-index-html-2021-04-08-17_21_13.jpg");
+  background-image: url("Portafolio Images/Screen-Portfolio.jpg");
 }
 
 #portafolio .portafolio .img-container .n2 {
-  background-image: url("Portafolio Images/screencapture-barcav-github-io-Huddle-Vanila-2021-04-07-11_00_35.jpg");
+  background-image: url("Portafolio Images/Screen-Huddle.jpg");
 }
 
 #portafolio .portafolio .img-container .n3 {
-  background-image: url("Portafolio Images/screencapture-barcav-github-io-Price-Vanila-2021-04-07-10_43_07.jpg");
+  background-image: url("Portafolio Images/Screen-Price.jpg");
 }
 
 #portafolio .portafolio .img-container .n4 {
-  background-image: url("Portafolio Images/screencapture-barcav-github-io-Feature-Vanila-2021-04-07-10_42_14.jpg");
+  background-image: url("Portafolio Images/Screen-Feature.jpg");
 }
 
 #portafolio .portafolio .img-container .n5 {
-  background-image: url("Portafolio Images/screencapture-file-D-Cristopher-Desarrollo-Web-Cris-Practicas-social-proof-section-master-index2-html-2021-04-08-17_34_24.jpg");
+  background-image: url("Portafolio Images/Screen-Social-Proof.jpg");
 }
 
 #portafolio .portafolio .img-container .n6 {
-  background-image: url("Portafolio Images/screencapture-barcav-github-io-Testimonials-Vanila-2021-04-07-10_27_31.jpg");
+  background-image: url("Portafolio Images/Screen-Testimonial.jpg");
 }
 
 #portafolio .portafolio .img-container .n7 {
-  background-image: url("Portafolio Images/screencapture-barcav-github-io-Profile-Vanila-2021-04-07-10_26_44.jpg");
+  background-image: url("Portafolio Images/Screen-Sign-Up.jpg");
 }
 
 /* ********** Contacto ********** */
@@ -1492,7 +1492,7 @@ footer .name div {
     -ms-grid-column-span: 1;
     grid-area: 1 / 3 / span 5 / span 1;
   }
-  .img-container .n2 {
+  .img-container .n7 {
     -ms-grid-row: 4;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;

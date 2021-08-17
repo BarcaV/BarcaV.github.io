@@ -23,19 +23,25 @@
     
     const fade = index => {
         let j;
-    
+        
         if (index === 0) {
             j = index + 3;
             for (let i = index; i < j; i++) {
                 degradeText[i].classList.toggle("fade");
             }
-        } else {
+        } else if (index === (projectContainer.length - 1)) {
+            index += (index + 1);
+            j = index + 3;
+            for (let i = index; i < j; i++) {
+                degradeText[i].classList.toggle("fade");
+            }
+        } else if (index > 0) {
             index += (index + 1);
             j = index + 2;
             for (let i = index; i < j; i++) {
                 degradeText[i].classList.toggle("fade");
             }
-        }
+        } 
     }
 })();
 
