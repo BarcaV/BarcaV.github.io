@@ -920,6 +920,7 @@ h3 {
 #perfil .perfil .perfil-texto p {
   height: 75%;
   color: #005792;
+  text-align: center;
   line-height: 1.5;
 }
 
