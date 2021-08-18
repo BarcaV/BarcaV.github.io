@@ -809,7 +809,7 @@ h3 {
 }
 
 .sticky_group .sticky_navbar .sticky_link_group .sticky_label {
-  width: 0;
+  width: 100%;
   height: 100%;
   font-weight: 600;
   color: #005792;
@@ -823,21 +823,28 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: opacity 0.4s ease, width 0.6s ease 0.1s;
-  transition: opacity 0.4s ease, width 0.6s ease 0.1s;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-transition: opacity 0.4s ease, width 0.6s ease, -webkit-transform 0.4s ease;
+  transition: opacity 0.4s ease, width 0.6s ease, -webkit-transform 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease, width 0.6s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease, width 0.6s ease, -webkit-transform 0.4s ease;
 }
 
-.sticky_group .sticky_navbar .sticky_link_group i {
+.sticky_group .sticky_navbar .sticky_link_group .navbar_icons {
   width: auto;
   height: 100%;
   opacity: 0;
   position: relative;
   top: -100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
-.sticky_group .sticky_navbar .sticky_link_group i svg {
+.sticky_group .sticky_navbar .sticky_link_group .navbar_icons svg {
   height: inherit;
 }
 
@@ -853,15 +860,24 @@ h3 {
 }
 
 .sticky_label_active {
-  width: 100% !important;
   opacity: 1 !important;
-  -webkit-transition: opacity 0.4s ease 0.1s, width 0.6s ease !important;
-  transition: opacity 0.4s ease 0.1s, width 0.6s ease !important;
+  -webkit-transform: translateX(0%) !important;
+          transform: translateX(0%) !important;
+  -webkit-transition: opacity 0.4s ease 0.1s, width 0.6s ease, -webkit-transform 0.4s ease 0.1s !important;
+  transition: opacity 0.4s ease 0.1s, width 0.6s ease, -webkit-transform 0.4s ease 0.1s !important;
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s, width 0.6s ease !important;
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s, width 0.6s ease, -webkit-transform 0.4s ease 0.1s !important;
 }
 
 .sticky_icons_active {
   top: 0 !important;
   opacity: 1 !important;
+}
+
+.icons_left {
+  left: 0 !important;
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
 }
 
 /* ********** Perfil ********** */
@@ -1732,7 +1748,7 @@ footer .name div {
     color: #F9F7F7 !important;
   }
   .sticky_group .sticky_navbar .sticky_link_group i {
-    height: 2rem;
+    height: 2rem !important;
   }
   #perfil {
     padding: 4rem 0;

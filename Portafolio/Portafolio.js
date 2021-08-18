@@ -125,9 +125,11 @@
                 if (ts <= (viewHeight / 2)) {
                     $spans.forEach(e => {e.classList.add("sticky_label_active");});
                     $links.forEach(e => {e.classList.add("sticky_links_active");});
+                    $icons.forEach(e => {e.classList.add("icons_left");});
                 } else {
                     $spans.forEach(e => {e.classList.remove("sticky_label_active");});
                     $links.forEach(e => {e.classList.remove("sticky_links_active");});
+                    $icons.forEach(e => {e.classList.remove("icons_left");});
                 }
             } else {
                 $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
@@ -135,12 +137,14 @@
         } else if (aw >= 800) {
             if (bs <= viewHeight) {
                 $icons.forEach(e => {e.classList.add("sticky_icons_active");});
-                if (bs >= (viewHeight / 2)) {
+                if (sd >= (viewHeight / 2.2)) {
                     $spans.forEach(e => {e.classList.add("sticky_label_active");});
                     $links.forEach(e => {e.classList.add("sticky_links_active");});
+                    $icons.forEach(e => {e.classList.add("icons_left");});
                 } else {
                     $spans.forEach(e => {e.classList.remove("sticky_label_active");});
                     $links.forEach(e => {e.classList.remove("sticky_links_active");});
+                    $icons.forEach(e => {e.classList.remove("icons_left");});
                 }
             } else {
                 $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
