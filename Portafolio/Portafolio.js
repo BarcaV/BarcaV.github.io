@@ -75,25 +75,20 @@
 
 ((d, w) => {
     const $main = d.querySelector("main");
-    const $stickyContainer = d.querySelector(".sticky-container");
     const $stickyNavBar = d.querySelector(".sticky_group");
     const $links = d.querySelectorAll(".sticky_link_group");
     const $spans = d.querySelectorAll(".sticky_link_group p")
     const $icons = d.querySelectorAll(".sticky_link_group i");
     const $home = d.querySelector("#home");
     const startPosition = w.pageYOffset;
+    const navBarHeight = $stickyNavBar.clientHeight
     var viewHeight = w.innerHeight;
     var viewWidth = w.innerWidth;
-    var v;
+
+    w.addEventListener("load", () => resizingNavBar());
+    w.addEventListener("resize", () => resizingNavBar(w.innerWidth));
 
 
-    if (viewWidth >= 1000) {
-        v = true;
-    } else {
-        $stickyNavBar.remove();
-        $main.insertAdjacentElement("beforeend", $stickyNavBar);
-        v = false;
-    }
     
     d.addEventListener("scroll", () => {
         let topStickyNavBar = $stickyNavBar.getBoundingClientRect().top;
@@ -101,72 +96,66 @@
         let scrollDown = w.pageYOffset;
         let actualWidth = w.innerWidth;
 
-        if (w.innerWidth >= 1000 && v === true) {
-            $stickyNavBar.remove();
-            $main.insertAdjacentElement("afterbegin", $stickyNavBar);
-            v = false;
-        } else if (w.innerWidth < 1000 && v === false) {
-            $stickyNavBar.remove();
-            $main.insertAdjacentElement("beforeend", $stickyNavBar);
-            v = true;
-        }
-
         navBarAnimation(topStickyNavBar, bottomStickyNavBar, scrollDown, actualWidth);
         if (viewWidth < 600) {
-            homeAnimation(scrollDown, bottomStickyNavBar);
+            homeAnimation(scrollDown);
         }
     })
     
     const navBarAnimation = (ts, bs, sd, aw) => {
         if (aw >= 1000) {
             if (bs < viewHeight) {
-                $icons.forEach(e => {e.classList.add("sticky_icons_active");});
+
+                $icons.forEach(e => e.classList.add("sticky_icons_active"));
                 
                 if (ts <= (viewHeight / 2)) {
-                    $spans.forEach(e => {e.classList.add("sticky_label_active");});
-                    $links.forEach(e => {e.classList.add("sticky_links_active");});
-                    $icons.forEach(e => {e.classList.add("icons_left");});
+                    $spans.forEach(e => e.classList.add("sticky_label_active"));
+                    $links.forEach(e => e.classList.add("sticky_links_active"));
+                    $icons.forEach(e => e.classList.add("icons_left"));
                 } else {
-                    $spans.forEach(e => {e.classList.remove("sticky_label_active");});
-                    $links.forEach(e => {e.classList.remove("sticky_links_active");});
-                    $icons.forEach(e => {e.classList.remove("icons_left");});
+                    $spans.forEach(e => e.classList.remove("sticky_label_active"));
+                    $links.forEach(e => e.classList.remove("sticky_links_active"));
+                    $icons.forEach(e => e.classList.remove("icons_left"));
                 }
-            } else {
-                $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
-            }
+
+            } else {$icons.forEach(e => e.classList.remove("sticky_icons_active"));}
+
         } else if (aw >= 800) {
+
             if (bs <= viewHeight) {
-                $icons.forEach(e => {e.classList.add("sticky_icons_active");});
+
+                $icons.forEach(e => e.classList.add("sticky_icons_active"));
+
                 if (sd >= (viewHeight / 2.2)) {
-                    $spans.forEach(e => {e.classList.add("sticky_label_active");});
-                    $links.forEach(e => {e.classList.add("sticky_links_active");});
-                    $icons.forEach(e => {e.classList.add("icons_left");});
+                    $spans.forEach(e => e.classList.add("sticky_label_active"));
+                    $links.forEach(e => e.classList.add("sticky_links_active"));
+                    $icons.forEach(e => e.classList.add("icons_left"));
                 } else {
-                    $spans.forEach(e => {e.classList.remove("sticky_label_active");});
-                    $links.forEach(e => {e.classList.remove("sticky_links_active");});
-                    $icons.forEach(e => {e.classList.remove("icons_left");});
+                    $spans.forEach(e => e.classList.remove("sticky_label_active"));
+                    $links.forEach(e => e.classList.remove("sticky_links_active"));
+                    $icons.forEach(e => e.classList.remove("icons_left"));
                 }
-            } else {
-                $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
-            }
+
+            } else {$icons.forEach(e => e.classList.remove("sticky_icons_active"));}
+
         } else if (aw >= 600) {
-            if (bs <= viewHeight) {
-                $icons.forEach(e => {e.classList.add("sticky_icons_active");});
-            } else {
-                $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
-            }
+
+            (bs <= viewHeight) ? $icons.forEach(e => e.classList.add("sticky_icons_active")) : $icons.forEach(e => e.classList.remove("sticky_icons_active"));
+            
         } else {
-            if (sd >= 64) {
-                $icons.forEach(e => {e.classList.add("sticky_icons_active");});
+            
+            if (sd >= navBarHeight) {
+                $icons.forEach(e => e.classList.add("sticky_icons_active"));
                 $icons[0].classList.remove("sticky_icons_active");
-            } else {
-                $icons.forEach(e => {e.classList.remove("sticky_icons_active");});
-            }
+            } else {$icons.forEach(e => e.classList.remove("sticky_icons_active"));}
+
         }
     }
 
     var actualPosition = startPosition;
-    const homeAnimation = (sd, bs) => {
+
+    const homeAnimation = (sd) => {
+
         if (sd >= actualPosition) {
             $home.classList.add("abajo");
             $icons[0].classList.remove("sticky_icons_active");
@@ -180,7 +169,29 @@
         if (sd <= (viewHeight / 2)) {
             $home.classList.add("abajo");
             $icons[0].classList.remove("sticky_icons_active");
+        } 
+
+    }
+
+    const resizingNavBar = vw => {
+
+        if (vw >= 1000) {
+
+            $stickyNavBar.remove();
+            $main.insertAdjacentElement("afterbegin", $stickyNavBar);
+
         } else {
+            
+            $stickyNavBar.remove();
+            $main.insertAdjacentElement("beforeend", $stickyNavBar);
+
+            if (vw < 800) {
+                $spans.forEach(e => e.classList.remove("sticky_label_active"));
+                $icons.forEach(e => e.classList.remove("icons_left"));
+            } else {
+                $spans.forEach(e => e.classList.add("sticky_label_active"));
+                $icons.forEach(e => e.classList.add("icons_left"));
+            }
         }
     }
 })(document, window);
