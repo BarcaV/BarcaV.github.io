@@ -85,7 +85,7 @@
     var viewHeight = w.innerHeight;
     var viewWidth = w.innerWidth;
 
-    w.addEventListener("load", () => resizingNavBar());
+    w.addEventListener("load", () => resizingNavBar(viewWidth));
     w.addEventListener("resize", () => resizingNavBar(w.innerWidth));
 
 
