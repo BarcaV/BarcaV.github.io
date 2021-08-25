@@ -23,14 +23,26 @@
     
     const fade = index => {
         let j;
+        let k;
         
         if (index === 0) {
             j = index + 3;
             for (let i = index; i < j; i++) {
                 degradeText[i].classList.toggle("fade");
             }
-        } else if (index === (projectContainer.length - 1)) {
-            index += (index + 1);
+        } else if (index >= 6) {
+            switch (index) {
+                case 6: 
+                    k = 1;
+                    break;
+                case 7: 
+                    k = 2;
+                    break;
+                case 8:
+                    k = 3;
+                    break;
+            }
+            index += (index + k);
             j = index + 3;
             for (let i = index; i < j; i++) {
                 degradeText[i].classList.toggle("fade");
@@ -44,6 +56,21 @@
         } 
     }
 })();
+
+/* ********** Image Active Animation ********** */
+
+((d, w) => {
+    const previewImage =  d.querySelectorAll(".second-image");
+
+
+    setInterval(() => {
+        previewImage[0].classList.toggle("opacity");
+    }, 5000);
+
+    setInterval(() => {
+        previewImage[1].classList.toggle("opacity");
+    }, 4500);
+})(document, window);
 
 /* ********** Contacto Animation ********** */
 (() => {
@@ -181,7 +208,7 @@
             $main.insertAdjacentElement("afterbegin", $stickyNavBar);
 
         } else {
-            
+
             $stickyNavBar.remove();
             $main.insertAdjacentElement("beforeend", $stickyNavBar);
 
