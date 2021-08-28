@@ -253,10 +253,14 @@ h3 {
 }
 
 h4 {
-  font-size: calc(0.05rem + 3.85vw);
+  font-size: calc(0.1rem + 4.5vw);
 }
 
 h5 {
+  font-size: calc(0.05rem + 3.85vw);
+}
+
+h6 {
   font-size: calc(0.05rem + 2.75vw);
 }
 
@@ -726,8 +730,8 @@ header .toggle-3 {
       -ms-flex-align: center;
           align-items: center;
   row-gap: unset;
-  -webkit-column-gap: 0.5rem;
-          column-gap: 0.5rem;
+  -webkit-column-gap: 0.25rem;
+          column-gap: 0.25rem;
   font-size: 0.75rem;
   overflow-x: scroll;
 }
@@ -855,10 +859,13 @@ header .toggle-3 {
     font-size: 1rem;
   }
   h4 {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
   }
   h5 {
-    font-size: 0.4rem;
+    font-size: 0.5rem;
+  }
+  h6 {
+    font-size: 0.35rem;
   }
   .container .calculator {
     width: 85%;
@@ -885,6 +892,8 @@ header .toggle-3 {
   .display .display_group .display_1 {
     width: calc(100% - 1.5rem);
     font-size: 0.75rem;
+    -webkit-column-gap: 0.5rem;
+            column-gap: 0.5rem;
   }
   .display .display_group .display_2 {
     width: calc(100% - 1.5rem);
