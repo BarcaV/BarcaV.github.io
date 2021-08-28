@@ -1,65 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Calculadora.css">
-    <title>Calculadora</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="Calculator.css">
+  <title>Calculator app</title>
 </head>
-<body>
-    <div class="container">
-        <div class="calculadora">
-            <div class="contenedor-pantalla">
-                <div class="display">
-                    <div id="pantallaArriba"></div>
-                    <div id="pantallaAbajo" class=""></div>
-                </div>
-            </div>
-            <div class="contenedor-botones">
-                <div class="subcontenedor-botones">
-                    <button id="" class="delete button correctores">C</button>
-                <button id="" class="partial button correctores">CE</button>
-                <button id="" class="erase button correctores">&larr;</button>
-                <button id="" class="operator button">+</button>
-                </div>
-            </div>
-            <div class="contenedor-botones">
-                <div class="subcontenedor-botones">
-                    <button id="" class="number button">7</button>
-                <button id="" class="number button">8</button>
-                <button id="" class="number button">9</button>
-                <button id="" class="operator button">/</button>
-                </div>
-            </div>
-            <div class="contenedor-botones">
-                <div class="subcontenedor-botones">
-                    <button id="" class="number button">4</button>
-                <button id="" class="number button">5</button>
-                <button id="" class="number button">6</button>
-                <button id="" class="operator button">x</button>
-                </div>
-            </div>
-            <div class="contenedor-botones">
-                <div class="subcontenedor-botones">
-                    <button id="" class="number button">1</button>
-                <button id="" class="number button">2</button>
-                <button id="" class="number button">3</button>
-                <button id="" class="operator button">-</button>
-                </div>
-            </div>
-            <div class="contenedor-botones">
-                <div class="subcontenedor-botones">
-                    <button id="" class="menus button especiales">(-)</button>
-                <button id="" class="number button">0</button>
-                <button id="" class="number button especiales">.</button>
-                <button id="" class="iqual button">=</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="theme-1">
 
-    
-    <script src="Calculadora2.js"></script>
+  <main class="container">
+    <div class="calculator">
+      <div class="calculator_container">
+  
+        <!-- ---------- Switch ---------- -->
+        <header>
+          <article>
+            <h3>calc</h3>
+            <div class="themes_group">
+              <h5 class="themes_label">THEME</h5>
+              <div class="switch_group">
+                <div class="switch_nums">
+                  <h5>1</h5>
+                  <h5>2</h5>
+                  <h5>3</h5>
+                </div>
+                <div class="toggle_group">
+                  <div class="toggle"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </header>
+  
+        <!-- ---------- Display ---------- -->
+        <section class="display">
+          <article class="display_group">
+            <div class="display_1"></div>
+            <div class="display_2"><h3></h3></div>
+          </article>
+        </section>
+  
+        <!-- ---------- Keypad ---------- -->
+        <section class="keypad">
+          <article>
+            <button class="btn number"><h3>7</h3></button>
+            <button class="btn number"><h3>8</h3></button>
+            <button class="btn number"><h3>9</h3></button>
+            <button class="btn delete"><h4>DEL</h4></button>
+  
+            <button class="btn number"><h3>4</h3></button>
+            <button class="btn number"><h3>5</h3></button>
+            <button class="btn number"><h3>6</h3></button>
+            <button class="btn operator"><h3>/</h3></button>
+  
+            <button class="btn number"><h3>1</h3></button>
+            <button class="btn number"><h3>2</h3></button>
+            <button class="btn number"><h3>3</h3></button>
+            <button class="btn operator"><h3>x</h3></button>
+  
+            <button class="btn special menus"><h3>(-)</h3></button>
+            <button class="btn number"><h3>0</h3></button>
+            <button class="btn special dot"><h3>.</h3></button>
+            <button class="btn operator"><h3>-</h3></button>
+  
+            <button class="btn equal"><h3>=</h3></button>
+            <button class="btn erase"><h4>C</h4></button>
+            <button class="btn operator"><h3>+</h3></button>
+        </section>
+      </div>
+    </div>
+  </main>
+  
+
+  <script src="Calculator.js"></script>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
 </body>
 </html>
