@@ -836,8 +836,8 @@ header .toggle-3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -42.5%);
-          transform: translate(-50%, -42.5%);
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
 }
 
 .keypad article .btn h4 {
@@ -845,8 +845,8 @@ header .toggle-3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -42.5%);
-          transform: translate(-50%, -42.5%);
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
 }
 
 .keypad article .equal {
@@ -1116,7 +1116,7 @@ header .toggle-3 {
   }
   header article .themes_group .themes_label {
     margin: 0 auto;
-    width: 0.75rem;
+    width: 0.85rem;
     height: auto;
     letter-spacing: unset;
     line-height: 1.5;

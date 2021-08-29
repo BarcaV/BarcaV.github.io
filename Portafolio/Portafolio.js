@@ -64,12 +64,16 @@
 
 
     setInterval(() => {
+        previewImage[2].classList.toggle("opacity");
+    }, 5250);
+
+    setInterval(() => {
         previewImage[0].classList.toggle("opacity");
     }, 5000);
 
     setInterval(() => {
         previewImage[1].classList.toggle("opacity");
-    }, 4500);
+    }, 4750);
 })(document, window);
 
 /* ********** Contacto Animation ********** */
@@ -124,7 +128,7 @@
         let actualWidth = w.innerWidth;
 
         navBarAnimation(topStickyNavBar, bottomStickyNavBar, scrollDown, actualWidth);
-        if (viewWidth < 600) {
+        if (w.innerWidth < 600) {
             homeAnimation(scrollDown);
         }
     })

@@ -1241,11 +1241,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 #portafolio .portafolio .img-container .n8 .second-image {
-  background-image: url("Portafolio Images/Screen-Preview_Active.jpg");
+  background-image: url("Portafolio Images/Screen-Preview-Active.jpg");
 }
 
 #portafolio .portafolio .img-container .n9 {
-  background-image: url("Portafolio Images/Screen-Profile.jpg");
+  background-image: url("Portafolio Images/Screen-Calculator.jpg");
+}
+
+#portafolio .portafolio .img-container .n9 .second-image {
+  background-image: url("Portafolio Images/Screen-Calculator-Active.jpg");
 }
 
 .second-image {
@@ -2012,6 +2016,7 @@ footer .name div {
   #landing {
     padding: 2rem 0;
     background-image: url("Portafolio Images/Desktop-image-s.jpg") !important;
+    z-index: 1000 !important;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
