@@ -50,10 +50,12 @@
     
     operators.forEach(o => {o.addEventListener("click", (e, i) => {
         
-        moreOper(o.textContent);
-        operator = o.textContent;
-        operatorActive(operator);
-        conterDot = 0;
+        if (belowNum || acumulado || firstNum) {
+            moreOper(o.textContent);
+            operator = o.textContent;
+            operatorActive(operator);
+            conterDot = 0;
+        }
     })})
     
     dot.addEventListener("click", () => {
