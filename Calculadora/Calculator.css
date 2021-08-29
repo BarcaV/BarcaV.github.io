@@ -1167,9 +1167,9 @@ header .toggle-3 {
   .display {
     height: unset;
     max-height: unset;
+    overflow: hidden;
   }
   .display .display_group {
-    max-width: 100%;
     border-radius: 0.35rem 0.35rem 0 0;
   }
   .display .display_group .display_1 {
@@ -1181,9 +1181,13 @@ header .toggle-3 {
   }
   .display .display_group .display_2 {
     width: calc(100% - 1.5rem);
+    height: 45%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
   .keypad {
-    padding: 0.5rem;
+    padding: 0.35rem;
     height: unset;
     max-height: unset;
     border-radius: 0 0 0.35rem 0.35rem;
@@ -1197,6 +1201,7 @@ header .toggle-3 {
   }
   .keypad article .btn {
     border-radius: 0.3rem;
+    border-bottom-width: 0.15rem !important;
   }
   .keypad article .n4 {
     -ms-grid-row: 2;
