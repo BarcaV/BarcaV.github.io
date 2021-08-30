@@ -80,27 +80,70 @@
 (() => {
     const inputs = document.querySelectorAll(".text-in");
     const labels = document.querySelectorAll(".label");
-    const enviar = document.querySelector("#enviar");
 
     inputs.forEach((p, index) => {
         p.addEventListener("focus", () => {
             textOut(index);
         })
         p.addEventListener("blur", () => {
-            textIn(index);
+            if (p.value === "") {
+                textIn(index);
+            }
         })
     })
 
     const textOut = index => {
-        inputs[index].classList.toggle("input-shrink");
-        labels[index].classList.toggle("label-out");
+        inputs[index].classList.add("input-shrink");
+        labels[index].classList.add("label-out");
     }
 
     const textIn = index => {
-        inputs[index].classList.toggle("input-shrink");
-        labels[index].classList.toggle("label-out");
+        inputs[index].classList.remove("input-shrink");
+        labels[index].classList.remove("label-out");
     }
 })();
+
+/* ********** Form Sent ********** */
+
+((d, w) => {
+    const form = d.querySelector(".form");
+    const modal = d.querySelector(".modal_container");
+    const loading = d.querySelector(".loading");
+    const inputs = d.querySelectorAll(".form__group");
+    const sent = d.querySelector("#enviar");
+
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        inputs.forEach(i => i.classList.add("form-opaco"));
+        loading.classList.add("loading-active");
+        fetch('https://formsubmit.co/ajax/crisquintero98@gmail.com', {method: "POST", body: new FormData(e.target)})
+            .then(res => (res.ok ? res.json() : Promise.reject(res)))
+            .then(json => {
+                console.log(json)
+                form.reset();
+            })
+            .catch(err => {
+                let message = err.statusText || "Ocurrio un error, por favor intentelo de nuevo";
+                modal.querySelector(".modal_group .modal_text h4").textContent = `Error ${err.status}: ${message}`;
+                modal.querySelector(".modal_group .modal_text h3").remove();
+                modal.querySelector(".modal_group .plane").remove();
+            })
+            .finally(() => {
+                loading.classList.remove("loading-active");
+                modal.classList.add("modal-active");
+                setTimeout(() => {
+                    modal.classList.remove("modal-active");
+                    inputs.forEach(i => {
+                        i.classList.remove("form-opaco");
+                        i.classList.remove("input-shrink");
+                        i.classList.remove("label-out");
+                    });
+                }, 5000);
+            })
+    })
+    
+})(document, window);
 
 /* ********** Sticky Menu ********** */
 

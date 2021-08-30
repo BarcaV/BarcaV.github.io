@@ -1351,14 +1351,20 @@ body::-webkit-scrollbar-thumb {
 #contacto .contacto .form {
   width: 50%;
   height: unset;
+  overflow: hidden;
+  position: relative;
   display: -ms-grid;
   display: grid;
   row-gap: 0.5vw;
 }
 
 #contacto .contacto .form .form__group, #contacto .contacto .form button {
+  outline: none;
   height: calc(2.281rem + 1.65vw);
   max-height: 3.8312rem;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
 
 #contacto .contacto .form .form__group .form__group-input, #contacto .contacto .form .form__group .form__group-text-area, #contacto .contacto .form button .form__group-input, #contacto .contacto .form button .form__group-text-area {
@@ -1442,6 +1448,87 @@ body::-webkit-scrollbar-thumb {
   color: #123053;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.loading {
+  width: calc(2.281rem + 1.65vw);
+  height: calc(2.281rem + 1.65vw);
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  -webkit-transition: opacity 0.2;
+  transition: opacity 0.2;
+}
+
+.loading svg {
+  width: 100%;
+  height: 100%;
+}
+
+.loading-active {
+  opacity: 1;
+}
+
+.form-opaco {
+  opacity: 0.4 !important;
+  pointer-events: none;
+}
+
+/* ***** Contacto Modal ***** */
+.modal_container {
+  padding: 2rem 0;
+  width: 60%;
+  height: unset;
+  background-color: #F9F7F7;
+  border: 0.15rem solid #00BBF0;
+  border-radius: 1rem;
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: top 0.5s;
+  transition: top 0.5s;
+}
+
+.modal_container .modal_group {
+  width: 80%;
+  height: 80%;
+  color: #005792;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 2vw;
+}
+
+.modal_container .modal_group .plane {
+  width: 2rem;
+  height: 2rem;
+  color: #00BBF0;
+}
+
+.modal-active {
+  opacity: 1;
+  top: 40%;
 }
 
 /* ********** Footer ********** */
@@ -1953,8 +2040,8 @@ footer .name div {
     display: none;
   }
   #contacto {
-    padding: 3rem 0 !important;
-    height: calc(100vw * 1.1) !important;
+    padding: 5rem 0 !important;
+    height: unset !important;
     background-image: url("Portafolio Images/keyword-red-l.jpg") !important;
   }
   #contacto .contacto {
@@ -2233,7 +2320,7 @@ footer .name div {
     height: calc(90vw/1.025);
   }
   #contacto {
-    padding: 3rem 0 !important;
+    padding: 5rem 0 !important;
     height: unset !important;
     background-image: url("Portafolio Images/keyword-red-s.jpg") !important;
   }
@@ -2241,8 +2328,10 @@ footer .name div {
     width: 85vw !important;
     height: unset !important;
     max-height: unset !important;
-    display: -ms-grid;
-    display: grid;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
   }
   #contacto .contacto svg {
     max-height: 35vw !important;
