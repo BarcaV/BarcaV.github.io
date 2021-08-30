@@ -110,7 +110,6 @@
     const modal = d.querySelector(".modal_container");
     const loading = d.querySelector(".loading");
     const inputs = d.querySelectorAll(".form__group");
-    const sent = d.querySelector("#enviar");
 
 
     form.addEventListener("submit", (e) => {
