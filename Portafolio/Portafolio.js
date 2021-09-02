@@ -61,19 +61,30 @@
 
 ((d, w) => {
     const previewImage =  d.querySelectorAll(".second-image");
+    const previewImage2 = d.querySelectorAll(".third-image")
 
 
-    setInterval(() => {
-        previewImage[2].classList.toggle("opacity");
-    }, 5250);
+    const shortTimer = setInterval(() => {
+        let image2 = previewImage[2].classList;
+        let image3 = previewImage2[0].classList;
 
-    setInterval(() => {
+        if (!image2.contains("opacity") && !image3.contains("opacity")) {
+            image2.add("opacity");
+        }   else if (image2.contains("opacity")) {
+            image2.remove("opacity");
+            image3.add("opacity");
+        } else if (image3.contains("opacity")) {
+            image3.remove("opacity");
+        }
+    }, 4750);
+    
+    const mediumTimer = setInterval(() => {
         previewImage[0].classList.toggle("opacity");
     }, 5000);
 
-    setInterval(() => {
+    const largeTimer = setInterval(() => {
         previewImage[1].classList.toggle("opacity");
-    }, 4750);
+    }, 5250);
 })(document, window);
 
 /* ********** Contacto Animation ********** */
@@ -265,6 +276,94 @@
                 $spans.forEach(e => e.classList.add("sticky_label_active"));
                 $icons.forEach(e => e.classList.add("icons_left"));
             }
+        }
+    }
+})(document, window);
+
+
+/* ********** Generales Animation ********** */
+
+((d, w) => {
+    const perfilText = d.querySelectorAll(".perfilText");
+    const perfilSvg = d.querySelector("#perfil-svg");
+    const circles = d.querySelectorAll(".circle");
+    const skillsTitle = d.querySelector(".habilidades h1");
+    const hDecoration = d.querySelectorAll(".hDecoration");
+    const logos = d.querySelectorAll(".logo");
+    const portfolioTitle = d.querySelector(".portafolio h1");
+    const portfolioGalery = d.querySelectorAll(".project__group");
+    const cDecoration = d.querySelectorAll(".cDecoration");
+    const contactTitle = d.querySelector(".left-contacto h1");
+    const contactSvg = d.querySelector(".email-container svg");
+
+    var viewHeight;
+    var viewWidth;
+
+    w.addEventListener("load", () => {
+        viewHeight = w.innerHeight;
+        viewWidth = w.innerWidth;
+    })
+
+    w.addEventListener("resize", () => {
+        viewHeight = w.innerHeight;
+        viewWidth = w.innerWidth;
+    })
+
+    d.addEventListener("scroll", () => {
+        let topPerfilText = perfilText[1].getBoundingClientRect().top;
+        let topDecoration = hDecoration[0].getBoundingClientRect().top;
+        let topPortfolioTitle = portfolioTitle.getBoundingClientRect().top;
+        let bottomDecoration = cDecoration[0].getBoundingClientRect().top;
+        let scroll = w.pageYOffset;
+
+        if (viewWidth >= 1000) {
+            console.log( hDecoration[0])
+            active(topPerfilText, topDecoration, topPortfolioTitle, bottomDecoration, scroll);
+        }
+    })
+
+    const removing = () => {
+        perfilText.forEach(p => p.classList.remove("show-active"));
+        perfilSvg.classList.remove("show-active");
+        skillsTitle.classList.remove("show-active");
+        hDecoration[0].classList.remove("top-active");
+        hDecoration[1].classList.remove("blanco-active");
+        logos.forEach(l => l.classList.remove("show-active"));
+        portfolioTitle.classList.remove("show-active");
+        portfolioGalery.forEach(g => g.classList.remove("show-active"));
+        cDecoration[0].classList.remove("bottom-active");
+        cDecoration[1].classList.remove("azul-active");
+        contactTitle.classList.remove("show-active");
+        contactSvg.classList.remove("show-active");
+    }
+
+    const active = (tptext, td, tptitle, bd, scroll) => {
+        if (scroll === 0) {
+            removing();
+        }
+
+        if (tptext <= (viewHeight * 1.3)) {
+            perfilText.forEach(p => p.classList.add("show-active"));
+            perfilSvg.classList.add("show-active");
+        }
+
+        if (td <= (viewHeight / 2.2)) {
+            hDecoration[0].classList.add("top-active");
+            hDecoration[1].classList.add("blanco-active");
+            skillsTitle.classList.add("show-active");
+            logos.forEach(l => l.classList.add("show-active"));
+        }
+        
+        if (tptitle <= (viewHeight / 2.3)) {
+            portfolioTitle.classList.add("show-active");
+            portfolioGalery.forEach(g => g.classList.add("show-active"));
+        }
+
+        if (bd <= (viewHeight / 2.4)) {
+            cDecoration[0].classList.add("bottom-active");
+            cDecoration[1].classList.add("azul-active");
+            contactTitle.classList.add("show-active");
+            contactSvg.classList.add("show-active");
         }
     }
 })(document, window);
