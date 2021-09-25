@@ -16,7 +16,7 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 
 hr {
@@ -434,10 +434,6 @@ h3 {
 }
 
 body::-webkit-scrollbar {
-  display: none;
-}
-
-body::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 0.7rem;
   background-color: #F9F7F7;
@@ -453,7 +449,12 @@ body::-webkit-scrollbar-button:increment, body::-webkit-scrollbar-button {
 
 body::-webkit-scrollbar-thumb {
   background-color: #00BBF0;
-  border-radius: 0.8rem;
+  opacity: 0.5;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 /* ********** Utilities ********** */
@@ -779,12 +780,27 @@ body::-webkit-scrollbar-thumb {
 
 .et1 {
   top: 10%;
-  -webkit-transition: top 1.25s ease-in-out;
-  transition: top 1.25s ease-in-out;
+  -webkit-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
 }
 
 .top-active {
   top: -38.2346vw;
+}
+
+.cuadro-blanco {
+  width: 100%;
+  height: 50%;
+  background-color: #F9F7F7;
+  position: absolute;
+  top: 0%;
+  z-index: 2;
+  -webkit-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
+}
+
+.blanco-active {
+  top: -50%;
 }
 
 .ellipse-bottom {
@@ -802,27 +818,12 @@ body::-webkit-scrollbar-thumb {
 
 .eb2 {
   bottom: 30%;
-  -webkit-transition: bottom 1.25s ease-in-out;
-  transition: bottom 1.25s ease-in-out;
+  -webkit-transition: bottom 1s ease-in-out;
+  transition: bottom 1s ease-in-out;
 }
 
 .bottom-active {
   bottom: -38.2346vw;
-}
-
-.cuadro-blanco {
-  width: 100%;
-  height: 50%;
-  background-color: #F9F7F7;
-  position: absolute;
-  top: 0%;
-  z-index: 2;
-  -webkit-transition: top 1.25s ease-in-out;
-  transition: top 1.25s ease-in-out;
-}
-
-.blanco-active {
-  top: -50%;
 }
 
 .cuadro-azul {
@@ -832,8 +833,8 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   bottom: 0%;
   z-index: 2;
-  -webkit-transition: bottom 1.25s ease-in-out;
-  transition: bottom 1.25s ease-in-out;
+  -webkit-transition: bottom 1s ease-in-out;
+  transition: bottom 1s ease-in-out;
 }
 
 .azul-active {
@@ -1302,8 +1303,8 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: all 1s ease 1.25s;
-  transition: all 1s ease 1.25s;
+  -webkit-transition: all 1s ease 1s;
+  transition: all 1s ease 1s;
 }
 
 #habilidades .habilidades .content-habilidades {
@@ -1360,8 +1361,8 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   -webkit-transform: scale(0.1);
           transform: scale(0.1);
-  -webkit-transition: all 1s ease 1.25s;
-  transition: all 1s ease 1.25s;
+  -webkit-transition: all 1s ease 1s;
+  transition: all 1s ease 1s;
 }
 
 #habilidades .habilidades .content-habilidades .skills h3 {
@@ -1376,7 +1377,7 @@ body::-webkit-scrollbar-thumb {
 /* ********** Portafolio ********** */
 #portafolio {
   padding: 4rem 0;
-  height: calc(100vw/0.9);
+  height: calc(100vw / 0.95);
   background-color: #F9F7F7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1444,8 +1445,8 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
+  -webkit-transform: scale(0.001);
+          transform: scale(0.001);
 }
 
 #portafolio .portafolio .img-container .project__group .project__description {
@@ -1566,7 +1567,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #portafolio .portafolio .img-container .n9 .second-image {
-  background-image: url("Portafolio Images/Screen-Calculator-Active.jpg");
+  background-image: url("Portafolio Images/Screen-Calculator-Active-1.jpg");
 }
 
 #portafolio .portafolio .img-container .n9 .third-image {
@@ -1664,8 +1665,8 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: all 1s ease 1.25s;
-  transition: all 1s ease 1.25s;
+  -webkit-transition: all 1s ease 1s;
+  transition: all 1s ease 1s;
 }
 
 #contacto .contacto .left-contacto .email-container {
@@ -1688,10 +1689,10 @@ body::-webkit-scrollbar-thumb {
   max-height: 60.3318vh;
   fill: #F9F7F7;
   opacity: 0;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
-  -webkit-transition: all 1s ease 1.25s;
-  transition: all 1s ease 1.25s;
+  -webkit-transform: scale(0.001);
+          transform: scale(0.001);
+  -webkit-transition: all 1s ease 1s;
+  transition: all 1s ease 1s;
 }
 
 #contacto .contacto .form {
@@ -1754,6 +1755,10 @@ body::-webkit-scrollbar-thumb {
   transition: .3s ease all;
 }
 
+#contacto .contacto .form .form__group .form__input:focus, #contacto .contacto .form .form__group .form__text-area:focus, #contacto .contacto .form .form__group button:focus, #contacto .contacto .form button .form__input:focus, #contacto .contacto .form button .form__text-area:focus, #contacto .contacto .form button button:focus {
+  border-color: #00BBF0;
+}
+
 #contacto .contacto .form #mensajeGroup {
   height: calc((2.281rem + 1.65vw) * 3.5);
   max-height: 17.3154rem;
@@ -1794,6 +1799,10 @@ body::-webkit-scrollbar-thumb {
   color: #123053;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+#contacto .contacto .form .button__group .btn:focus {
+  border-color: #F9F7F7;
 }
 
 .loading {
@@ -1966,7 +1975,7 @@ footer .name div {
     height: 100% !important;
   }
   #portafolio {
-    max-height: 1235.620px;
+    max-height: calc(1500px/ 0.95);
   }
   #contacto {
     max-height: 49.3412rem;
@@ -2068,6 +2077,18 @@ footer .name div {
 }
 
 @media (min-width: 800px) and (max-width: 999px) {
+  .et1 {
+    top: -38.2346vw;
+  }
+  .cuadro-blanco {
+    top: -50%;
+  }
+  .eb2 {
+    bottom: -38.2346vw;
+  }
+  .cuadro-azul {
+    bottom: -50%;
+  }
   #landing {
     padding: 2rem 0;
     background-image: url("Portafolio Images/Desktop-image-m.jpg") !important;
@@ -2147,13 +2168,24 @@ footer .name div {
             align-items: center;
     row-gap: 2vw;
   }
+  #perfil .perfil .perfil-texto h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   #perfil .perfil .perfil-texto p {
     width: 80%;
     height: 70% !important;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #perfil .perfil #perfil-svg {
     width: 100% !important;
     height: 90% !important;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   #perfil .perfil #perfil-svg svg {
     width: 50%;
@@ -2169,6 +2201,11 @@ footer .name div {
   #habilidades .habilidades {
     max-height: 100% !important;
   }
+  #habilidades .habilidades h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   #habilidades .habilidades .skills {
     width: 65% !important;
     height: 70% !important;
@@ -2183,40 +2220,53 @@ footer .name div {
   }
   #habilidades .habilidades .skills .logo-container .logo {
     height: 7rem !important;
+    opacity: 1 !important;
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
   }
   #portafolio {
     height: calc(100vw/0.65);
   }
-  #portafolio .img-container {
+  #portafolio .portafolio__container .portafolio h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  #portafolio .portafolio__container .portafolio .img-container {
     -ms-grid-rows: (1fr)[6];
     -ms-grid-columns: (1fr)[2];
         grid-template: repeat(6, 1fr)/repeat(2, 1fr);
   }
-  #portafolio .img-container .n1 {
+  #portafolio .portafolio__container .portafolio .img-container .project__group {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  #portafolio .portafolio__container .portafolio .img-container .n1 {
     display: none !important;
   }
-  #portafolio .img-container .n5 {
+  #portafolio .portafolio__container .portafolio .img-container .n5 {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-area: 1 / 1 / span 2 / span 1;
   }
-  #portafolio .img-container .n7 {
+  #portafolio .portafolio__container .portafolio .img-container .n7 {
     -ms-grid-row: 3;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: 3 / 1 / span 2 / span 2;
   }
-  #portafolio .img-container .n8 {
+  #portafolio .portafolio__container .portafolio .img-container .n8 {
     -ms-grid-row: 5;
     -ms-grid-row-span: 2;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-area: 5 / 2 / span 2 / span 1;
   }
-  #portafolio .img-container .n4 {
+  #portafolio .portafolio__container .portafolio .img-container .n4 {
     display: none !important;
   }
   #contacto {
@@ -2229,8 +2279,16 @@ footer .name div {
     height: 90% !important;
     max-height: unset !important;
   }
-  #contacto .contacto svg {
+  #contacto .contacto .left-contacto h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  #contacto .contacto .left-contacto .email-container svg {
     max-height: 35vw !important;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   #contacto .form .form__group {
     height: calc(2.5rem + 2.35vw) !important;
@@ -2257,6 +2315,18 @@ footer .name div {
 
 /* *********** Tablet ********** */
 @media (min-width: 600px) and (max-width: 799px) {
+  .et1 {
+    top: -38.2346vw;
+  }
+  .cuadro-blanco {
+    top: -50%;
+  }
+  .eb2 {
+    bottom: -38.2346vw;
+  }
+  .cuadro-azul {
+    bottom: -50%;
+  }
   #landing {
     padding: 2rem 0;
     background-image: url("Portafolio Images/Desktop-image-l.jpg") !important;
@@ -2329,15 +2399,26 @@ footer .name div {
             align-items: center;
     row-gap: 4vw;
   }
+  #perfil .perfil .perfil-texto h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   #perfil .perfil .perfil-texto p {
     padding: 2vw 0;
     width: 80%;
     height: unset !important;
     text-align: center;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #perfil .perfil #perfil-svg {
     width: 100% !important;
     height: 90% !important;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   #perfil .perfil #perfil-svg svg {
     width: 70%;
@@ -2353,6 +2434,11 @@ footer .name div {
   #habilidades .habilidades {
     max-height: 100% !important;
   }
+  #habilidades .habilidades h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   #habilidades .habilidades .skills {
     width: 65% !important;
     height: 70% !important;
@@ -2367,40 +2453,53 @@ footer .name div {
   }
   #habilidades .habilidades .skills .logo-container .logo {
     height: 7rem !important;
+    opacity: 1 !important;
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
   }
   #portafolio {
     height: calc(100vw/0.65);
   }
-  #portafolio .img-container {
+  #portafolio .portafolio__container .portafolio h1 {
+    opacity: 1 !important;
+    -webkit-transform: translateY(0) !important;
+            transform: translateY(0) !important;
+  }
+  #portafolio .portafolio__container .portafolio .img-container {
     -ms-grid-rows: (1fr)[6];
     -ms-grid-columns: (1fr)[2];
         grid-template: repeat(6, 1fr)/repeat(2, 1fr);
   }
-  #portafolio .img-container .n1 {
+  #portafolio .portafolio__container .portafolio .img-container .project__group {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  #portafolio .portafolio__container .portafolio .img-container .n1 {
     display: none !important;
   }
-  #portafolio .img-container .n5 {
+  #portafolio .portafolio__container .portafolio .img-container .n5 {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-area: 1 / 1 / span 2 / span 1;
   }
-  #portafolio .img-container .n7 {
+  #portafolio .portafolio__container .portafolio .img-container .n7 {
     -ms-grid-row: 3;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: 3 / 1 / span 2 / span 2;
   }
-  #portafolio .img-container .n8 {
+  #portafolio .portafolio__container .portafolio .img-container .n8 {
     -ms-grid-row: 5;
     -ms-grid-row-span: 2;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-area: 5 / 2 / span 2 / span 1;
   }
-  #portafolio .img-container .n4 {
+  #portafolio .portafolio__container .portafolio .img-container .n4 {
     display: none !important;
   }
   #contacto {
@@ -2417,8 +2516,16 @@ footer .name div {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #contacto .contacto svg {
+  #contacto .contacto .left-contacto h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  #contacto .contacto .left-contacto .email-container svg {
     max-height: 35vw !important;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   #contacto .form {
     width: 100% !important;
@@ -2467,6 +2574,18 @@ footer .name div {
 
 /* ********** Movil Screen ********** */
 @media (max-width: 599px) {
+  .et1 {
+    top: -38.2346vw;
+  }
+  .cuadro-blanco {
+    top: -50%;
+  }
+  .eb2 {
+    bottom: -38.2346vw;
+  }
+  .cuadro-azul {
+    bottom: -50%;
+  }
   #landing {
     padding: 2rem 0;
     background-image: url("Portafolio Images/Desktop-image-s.jpg") !important;
@@ -2612,15 +2731,26 @@ footer .name div {
             align-items: center;
     row-gap: 4vw;
   }
+  #perfil .perfil .perfil-texto h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   #perfil .perfil .perfil-texto p {
     padding: 2vw 0;
     width: 80%;
     height: unset !important;
     text-align: center;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #perfil .perfil #perfil-svg {
     width: 100% !important;
     height: 90% !important;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   #perfil .perfil #perfil-svg svg {
     width: 70%;
@@ -2636,6 +2766,11 @@ footer .name div {
   #habilidades .habilidades {
     max-height: 100% !important;
     text-align: center;
+  }
+  #habilidades .habilidades h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #habilidades .habilidades .content-habilidades {
     display: -ms-grid !important;
@@ -2659,6 +2794,9 @@ footer .name div {
   #habilidades .habilidades .content-habilidades .skills .logo-container .logo {
     width: 8rem !important;
     height: 7rem !important;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   #portafolio {
     height: unset;
@@ -2682,9 +2820,19 @@ footer .name div {
     display: grid;
     row-gap: 7vw;
   }
+  #portafolio .portafolio__container .portafolio h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   #portafolio .portafolio__container .portafolio .img-container {
     width: 90vw;
     height: 100%;
+  }
+  #portafolio .portafolio__container .portafolio .img-container .project__group {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   #portafolio .portafolio__container .portafolio .img-container a {
     width: 100%;
@@ -2710,10 +2858,7 @@ footer .name div {
         -ms-flex-direction: column !important;
             flex-direction: column !important;
   }
-  #contacto .contacto svg {
-    max-height: 35vw !important;
-  }
-  #contacto .left-contacto {
+  #contacto .contacto .left-contacto {
     width: 85vw !important;
     max-width: unset !important;
     -webkit-box-pack: center;
@@ -2722,6 +2867,17 @@ footer .name div {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  #contacto .contacto .left-contacto h1 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  #contacto .contacto .left-contacto .email-container svg {
+    max-height: 35vw !important;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   #contacto .form {
     width: 85vw !important;

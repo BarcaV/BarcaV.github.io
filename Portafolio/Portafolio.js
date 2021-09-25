@@ -1,5 +1,6 @@
 
 /* ********** Gallery Animation ********** */
+
 (() => {
     const projectContainer = document.querySelectorAll(".project__group");
     const degrade = document.querySelectorAll(".project__description");
@@ -88,6 +89,7 @@
 })(document, window);
 
 /* ********** Contacto Animation ********** */
+
 (() => {
     const inputs = document.querySelectorAll(".text-in");
     const labels = document.querySelectorAll(".label");
@@ -302,6 +304,13 @@
     w.addEventListener("load", () => {
         viewHeight = w.innerHeight;
         viewWidth = w.innerWidth;
+
+        if (viewWidth < 1000) {
+            perfilAction();
+            skillsAction();
+            portfolioAction();
+            contactAction();
+        }
     })
 
     w.addEventListener("resize", () => {
@@ -315,9 +324,8 @@
         let topPortfolioTitle = portfolioTitle.getBoundingClientRect().top;
         let bottomDecoration = cDecoration[0].getBoundingClientRect().top;
         let scroll = w.pageYOffset;
-
+        
         if (viewWidth >= 1000) {
-            console.log( hDecoration[0])
             active(topPerfilText, topDecoration, topPortfolioTitle, bottomDecoration, scroll);
         }
     })
@@ -338,32 +346,50 @@
     }
 
     const active = (tptext, td, tptitle, bd, scroll) => {
+
         if (scroll === 0) {
             removing();
         }
 
         if (tptext <= (viewHeight * 1.3)) {
-            perfilText.forEach(p => p.classList.add("show-active"));
-            perfilSvg.classList.add("show-active");
+            perfilAction();
         }
 
         if (td <= (viewHeight / 2.2)) {
-            hDecoration[0].classList.add("top-active");
-            hDecoration[1].classList.add("blanco-active");
-            skillsTitle.classList.add("show-active");
-            logos.forEach(l => l.classList.add("show-active"));
+            skillsAction();
         }
         
         if (tptitle <= (viewHeight / 2.3)) {
-            portfolioTitle.classList.add("show-active");
-            portfolioGalery.forEach(g => g.classList.add("show-active"));
+            portfolioAction();
         }
 
         if (bd <= (viewHeight / 2.4)) {
-            cDecoration[0].classList.add("bottom-active");
-            cDecoration[1].classList.add("azul-active");
-            contactTitle.classList.add("show-active");
-            contactSvg.classList.add("show-active");
+            contactAction();
         }
+    }
+
+    const perfilAction = () => {
+        perfilText.forEach(p => p.classList.add("show-active"));
+        perfilSvg.classList.add("show-active");
+    }
+
+    const skillsAction = () => {
+        hDecoration[0].classList.add("top-active");
+        hDecoration[1].classList.add("blanco-active");
+        skillsTitle.classList.add("show-active");
+        logos.forEach(l => l.classList.add("show-active"));
+    }
+
+    const portfolioAction = () => {
+        portfolioTitle.classList.add("show-active");
+        portfolioGalery.forEach(g => g.classList.add("show-active"));
+    }
+
+    const contactAction = () => {
+        console.log(1)
+        cDecoration[0].classList.add("bottom-active");
+        cDecoration[1].classList.add("azul-active");
+        contactTitle.classList.add("show-active");
+        contactSvg.classList.add("show-active");
     }
 })(document, window);
