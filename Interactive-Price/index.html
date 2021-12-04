@@ -10,44 +10,61 @@
 <body>
 
   <div class="container">
+    <svg class="bg_svg" xmlns="http://www.w3.org/2000/svg" width="1440" height="449"><path fill="#F1F5FE" fill-rule="evenodd" d="M0 0h1440v449H191.5C85.737 449 0 363.263 0 257.5V0z"/></svg>
+
     <main>
+<!-- Introduction -->
       <section class="introduction_group">
         <h1 class="introduction_title">Simple, traffic-based pricing</h1>
         <p class="introduction_paragraph">Sign-up for our 30-day trial. <br> No credit card required.</p>
         <i class="introduction_circles"><svg xmlns="http://www.w3.org/2000/svg" width="146" height="145"><g fill="none" fill-rule="evenodd" stroke="#CFD8EF"><circle cx="63" cy="82" r="62.5"/><circle cx="105" cy="41" r="40.5"/></g></svg></i>
       </section>
+
+<!-- Card -->
       <section class="card_group">
+
+  <!-- Pricing -->
         <article class="pricing_group">
+
+    <!-- Price -->
           <div class="price">
-            <h2>PAGEVIEWS</h2>
+            <h2><span id="pageviews"></span>PAGEVIEWS</h2>
             <div class="slider_group">
               <input type="range" min="1" max="5" value="3" class="slider_track" id="slider_track">
               <div class="slider_progress" id="slider_progress"></div>
               <div class="slider_btn" id="slider_btn"></div>
             </div>
-            <p><span>$</span>/ month</p>
+            <p><span id="value"></span>/ month</p>
           </div>
+
+    <!-- Billing -->
           <div class="billing_group">
             <div class="billing_type">
               <p>Monthly Billing</p>
             </div>
-            <div class="billing_toggle">
-              <div class=""></div>
+            <div class="billing_toggle" id="toggleBar">
+              <div class="toggle" id="toggle"></div>
             </div>
             <div class="billing_type">
-              <p>Yearly Billing</p>
-              <div class="discount"><p><span class="menus">-</span>25%</p><span class="dis">discount</span></div> 
+              <p class="yearly">Yearly Billing 
+                <span class="discount">
+                  <span class="menus">-</span>25%
+                  <span class="dis">discount</span>
+                </span>
+              </p>
             </div>
             
           </div>
         </article>
-        <footer class="">
-          <div class="benefits_group">
-            <i></i><p>Unlimited websites</p>
-            <i></i><p>100% data ownership</p>
-            <i></i><p>Email reports</p>
+  
+  <!-- Beneficios -->
+        <footer class="benefits_group">
+          <div class="benefits_list">
+            <span class=""><i><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg></i><p>Unlimited websites</p></span>
+            <span class=""><i><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg></i><p>100% data ownership</p></span>
+            <span class=""><i><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg></i><p>Email reports</p></span>
           </div>
-          <button type="submit">Start my trial</button>
+          <button type="submit" class="submit">Start my trial</button>
         </footer>
       </section>
     </main>

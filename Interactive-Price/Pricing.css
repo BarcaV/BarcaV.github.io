@@ -335,6 +335,16 @@ h2 {
   row-gap: 0;
   -webkit-column-gap: 0;
           column-gap: 0;
+  overflow: hidden;
+}
+
+.container .bg_svg {
+  width: 100vw;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .container main {
@@ -355,6 +365,9 @@ h2 {
   row-gap: 2rem;
   -webkit-column-gap: 0;
           column-gap: 0;
+  z-index: 5;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 /* ********** Introduction ********** */
@@ -382,12 +395,19 @@ h2 {
 }
 
 .introduction_group .introduction_title {
+  font-size: 1.75rem;
   color: #293356;
+  z-index: 5;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 .introduction_group .introduction_paragraph {
   line-height: 1.5;
   color: #848EAD;
+  z-index: 5;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 .introduction_group .introduction_circles {
@@ -395,6 +415,8 @@ h2 {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 /* ********** Card ********** */
@@ -404,6 +426,8 @@ h2 {
   border-radius: 0.5rem;
   -webkit-box-shadow: 0.1rem 0.1rem 2rem 0.2rem #E5E9FF;
           box-shadow: 0.1rem 0.1rem 2rem 0.2rem #E5E9FF;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 /* ********** Price ********** */
@@ -427,6 +451,8 @@ h2 {
   row-gap: 2rem;
   -webkit-column-gap: 0;
           column-gap: 0;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 .pricing_group .price {
@@ -451,6 +477,23 @@ h2 {
 
 .pricing_group .price h2 {
   color: #848EAD;
+  letter-spacing: 0.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
 }
 
 .pricing_group .price .slider_group {
@@ -472,6 +515,8 @@ h2 {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transition: width ease 0.3s;
+  transition: width ease 0.3s;
 }
 
 .pricing_group .price .slider_group .slider_track:focus {
@@ -479,12 +524,20 @@ h2 {
 }
 
 .pricing_group .price .slider_group .slider_track::-webkit-slider-thumb {
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-appearance: none;
           appearance: none;
   width: 2.5rem;
   height: 2.5rem;
   background-color: transparent;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.pricing_group .price .slider_group .slider_track::-webkit-slider-thumb:target {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 .pricing_group .price .slider_group .slider_progress {
@@ -497,6 +550,8 @@ h2 {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transition: width ease 0.3s;
+  transition: width ease 0.3s;
 }
 
 .pricing_group .price .slider_group .slider_btn {
@@ -514,10 +569,13 @@ h2 {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 .pricing_group .price p {
   color: #848EAD;
+  font-weight: 800;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -550,15 +608,17 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   row-gap: 0;
   -webkit-column-gap: 0.75rem;
           column-gap: 0.75rem;
+  -webkit-transform: translateX(-0.75%);
+          transform: translateX(-0.75%);
 }
 
 .pricing_group .billing_group .billing_type {
@@ -585,10 +645,17 @@ h2 {
   color: #848EAD;
 }
 
-.pricing_group .billing_group .billing_type .discount {
+.pricing_group .billing_group .billing_type .yearly {
+  position: relative;
+}
+
+.pricing_group .billing_group .billing_type .yearly .discount {
   padding: 0.3rem 0.5rem;
   background-color: #FDEBE6;
   border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #FF8C65;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -605,29 +672,269 @@ h2 {
   row-gap: 0;
   -webkit-column-gap: 0;
           column-gap: 0;
+  position: absolute;
+  top: 0;
+  left: 110%;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
 }
 
-.pricing_group .billing_group .billing_type .discount p {
-  font-size: 0.8rem;
-  color: #FF8C65;
-}
-
-.pricing_group .billing_group .billing_type .discount .dis {
+.pricing_group .billing_group .billing_type .yearly .discount .dis {
   display: none;
 }
 
 .pricing_group .billing_group .billing_toggle {
+  cursor: pointer;
   padding: 0.3rem;
   width: 3rem;
-  height: 1.5rem;
+  height: 1.6rem;
   background-color: #CDD6EE;
   border-radius: 1rem;
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
 }
 
-.pricing_group .billing_group .billing_toggle div {
+.pricing_group .billing_group .billing_toggle:hover {
+  background-color: #A4F3EB;
+}
+
+.pricing_group .billing_group .billing_toggle .toggle {
   width: 40%;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 50%;
+  position: relative;
+  left: 0;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.pricing_group .billing_group .billing_toggle .right {
+  left: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+/* ********** Benefits ********** */
+.benefits_group {
+  padding: 2rem 1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 2.5rem;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.benefits_group .benefits_list {
+  color: #848EAD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0.75rem;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+}
+
+.benefits_group .benefits_list span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: 0;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.benefits_group .benefits_list span i {
+  width: 1rem;
+}
+
+.benefits_group .benefits_list span i svg {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.benefits_group .submit {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1.25rem;
+  width: 70%;
+  background-color: #293356;
+  color: #BCCCFF;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  border: none;
+  border-radius: 2rem;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.benefits_group .submit:hover {
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* ********** Media Query ************ */
+@media (min-width: 500px) {
+  .container main {
+    width: 80vw;
+  }
+  .pricing_group .price .slider_group {
+    max-width: 400px;
+  }
+  .benefits_group .submit {
+    max-width: 295px;
+  }
+}
+
+@media (min-width: 700px) {
+  .container main {
+    width: 75vw;
+    row-gap: 2.5rem;
+  }
+  .introduction_group .introduction_title {
+    font-size: 2rem;
+  }
+  .introduction_group .introduction_paragraph {
+    font-size: 1rem;
+  }
+  .introduction_group .introduction_paragraph br {
+    display: none;
+  }
+  .introduction_group .introduction_circles {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: scale(1.2) translateX(-41%);
+            transform: scale(1.2) translateX(-41%);
+  }
+  .pricing_group {
+    padding: 2.5rem 3.5rem;
+  }
+  .pricing_group .price .slider_group {
+    width: 100%;
+    height: 3rem;
+    max-width: unset;
+  }
+  .pricing_group .price .slider_group .slider_track::-webkit-slider-thumb {
+    width: 3rem;
+    height: 3rem;
+  }
+  .pricing_group .price .slider_group .slider_btn {
+    width: 3rem;
+    height: 3rem;
+  }
+  .pricing_group .billing_group .billing_type .yearly .discount {
+    -webkit-column-gap: 0.25rem;
+            column-gap: 0.25rem;
+  }
+  .pricing_group .billing_group .billing_type .yearly .discount .menus {
+    display: none;
+  }
+  .pricing_group .billing_group .billing_type .yearly .discount .dis {
+    display: block;
+  }
+  .benefits_group {
+    padding: 2.5rem 3.5rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    row-gap: 0;
+  }
+  .benefits_group .benefits_list {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .benefits_group .submit {
+    width: 35%;
+    max-width: unset;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container main {
+    width: 60vw;
+    row-gap: 2.5rem;
+  }
+  .introduction_group .introduction_title {
+    font-size: 2.25rem;
+  }
+  .introduction_group .introduction_paragraph {
+    font-size: 1rem;
+  }
+  .pricing_group .price {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .pricing_group .price h2 {
+    font-size: 1.25rem;
+  }
+  .pricing_group .price .slider_group {
+    width: 100%;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .pricing_group .price p {
+    font-size: 1.25rem;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .pricing_group .price p span {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container main {
+    width: 50%;
+    max-width: 700px;
+  }
 }
 /*# sourceMappingURL=Pricing.css.map */
